@@ -1,6 +1,6 @@
 # LAB_EDA_II
 # include "stdio.h"
-# include "funciones_main.c"
+# include "funciones_main.h"
 
 void menu(){
     printf("a) Insertar un nuevo usuario.\n");
@@ -17,25 +17,18 @@ void menu_usuario(){
     printf("e) Volver al menu principal.\n");
 }
 
-int exit(){
+int end_program(){
     return 0;
 }
-
-typedef struct {
-    char name[15];
-    int age;
-    char email[50];
-    char location[15];
-    char like[5];
-} User;
 
 int main() {
     menu();
     char menu, operar_usuario;
+    User usuarios;
     scanf("%c", &menu);
 
     if (menu == 'a')
-        nuevo_usuario();
+        nuevo_usuario(&usuarios);
     else if (menu == 'b')
         lista_usuarios();
     else if (menu == 'c') {
@@ -56,7 +49,7 @@ int main() {
             scanf("%c", &operar_usuario);
         }}
     else if (menu == 'd')
-        exit();
+        end_program();
     else {
         printf("Introduce una opcion valida.\n");
         scanf("%c", &menu);
