@@ -1,20 +1,20 @@
-# LAB_EDA_II
+
 # include "stdio.h"
 # include "funciones_main.h"
 
 void menu(){
-    printf("a) Insertar un nuevo usuario.\n");
-    printf("b) Listar todos los usuarios existentes.\n");
-    printf("c) Operar con un usuario especifico.\n");
-    printf("d) Salir.\n");
+    printf("1) Insertar un nuevo usuario.\n");
+    printf("2) Listar todos los usuarios existentes.\n");
+    printf("3) Operar con un usuario especifico.\n");
+    printf("4) Salir.\n");
 }
 
 void menu_usuario(){
-    printf("a) Enviar solicitudes de amistad.\n");
-    printf("b) Gestionar las solicitudes pendientes.\n");
-    printf("c) Realizar una publicación.\n");
-    printf("d) Listar las publicaciones del usuario seleccionado.\n");
-    printf("e) Volver al menu principal.\n");
+    printf("1) Enviar solicitudes de amistad.\n");
+    printf("2) Gestionar las solicitudes pendientes.\n");
+    printf("3) Realizar una publicación.\n");
+    printf("4) Listar las publicaciones del usuario seleccionado.\n");
+    printf("5) Volver al menu principal.\n");
 }
 
 int end_program(){
@@ -22,36 +22,40 @@ int end_program(){
 }
 
 int main() {
-    menu();
-    char menu, operar_usuario;
-    User usuarios;
-    scanf("%c", &menu);
+    Lista_usuarios lista;
+    iniciar_lista(&lista);
 
-    if (menu == 'a')
-        nuevo_usuario(&usuarios);
-    else if (menu == 'b')
-        lista_usuarios();
-    else if (menu == 'c') {
-        menu_usuario();
-        scanf("%c", &operar_usuario);
-        if (operar_usuario == 'a')
-            enviar_solicitud();
-        else if (operar_usuario == 'b')
-            gestionar_solicitudes();
-        else if (operar_usuario == 'c')
-            publicar();
-        else if (operar_usuario == 'd')
-            publicaciones_usuario();
-        else if (operar_usuario == 'e')
-            main();
+    menu();
+    int menu, operar_usuario;
+    User usuarios;
+    scanf("%d", &menu);
+    while (menu != 4) {
+        if (menu == 1)
+            nuevo_usuario(&usuarios);
+        else if (menu == 2)
+            return 0;
+        else if (menu == 3) {
+            menu_usuario();
+            scanf("%d", &operar_usuario);
+            if (operar_usuario == 1)
+                return 0;
+            else if (operar_usuario == 2)
+                return 0;
+            else if (operar_usuario == 3)
+                return 0;
+            else if (operar_usuario == 4)
+                return 0;
+            else if (operar_usuario == 5)
+                main();
+            else {
+                printf("Introduce una opcion valida.\n");
+                scanf("%d", &operar_usuario);
+            }}
         else {
             printf("Introduce una opcion valida.\n");
-            scanf("%c", &operar_usuario);
-        }}
-    else if (menu == 'd')
-        end_program();
-    else {
-        printf("Introduce una opcion valida.\n");
-        scanf("%c", &menu);
+            scanf("%d", &menu);
+        }
     }
+    printf("Gracias por usar nuestra aplicacion!\n");
+    printf("Hecha por Sergi Panyos, Sergi Recuero, David Romero y Saul Ruiz.\n");
 }
