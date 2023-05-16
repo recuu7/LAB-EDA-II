@@ -1,0 +1,3 @@
+D:/Uni/LAB-EDA-II/cmake-build-debug/CMakeFiles/LAB_EDA_II.dir
+D:/Uni/LAB-EDA-II/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Uni/LAB-EDA-II/cmake-build-debug/CMakeFiles/rebuild_cache.dir
