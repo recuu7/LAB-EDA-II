@@ -19,7 +19,7 @@ void iniciar_usuario(User* usuario){
 }
 
 void pedir_datos(User* usuario){
-    printf("Escriba el nombre de usuario:\n");
+    printf("\nEscriba el nombre de usuario:\n");
     scanf("%s", usuario->name);
     printf("Edad actual:\n");
     scanf("%d", &usuario->age);
@@ -58,14 +58,22 @@ void nuevo_usuario(Lista_usuarios* lista){
     iniciar_usuario(usuario);
     pedir_datos(usuario);
     poner_lista(lista, usuario);
-    printf("Usuario anadido correctamente!\n\n");
+    printf("\nUsuario anadido correctamente!\n\n");
 }
 
 void lista_todos_usuarios(Lista_usuarios* lista){
-    printf("Todos los usuarios registrados son:\n");
+    printf("\nTodos los usuarios registrados son:\n");
     Node_lista* nodeLista = lista->primero;
+    int i = 1;
     while (nodeLista != NULL){
-        printf("- %s\n", nodeLista->usuario->name);
+        printf("%d. %s\n", i, nodeLista->usuario->name);
+        i++;
         nodeLista = nodeLista->siguiente;
     }
+    printf("\n\n");
 }
+
+void lista_usuarios_file(FILE* f){
+
+}
+

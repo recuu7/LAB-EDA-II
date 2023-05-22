@@ -61,6 +61,12 @@ build CMakeFiles/LAB_EDA_II.dir/funciones_main.c.obj: C_COMPILER__LAB_EDA_II_Deb
   OBJECT_DIR = CMakeFiles\LAB_EDA_II.dir
   OBJECT_FILE_DIR = CMakeFiles\LAB_EDA_II.dir
 
+build CMakeFiles/LAB_EDA_II.dir/funciones_user.c.obj: C_COMPILER__LAB_EDA_II_Debug D$:/Uni/LAB-EDA-II/funciones_user.c || cmake_object_order_depends_target_LAB_EDA_II
+  DEP_FILE = CMakeFiles\LAB_EDA_II.dir\funciones_user.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\LAB_EDA_II.dir
+  OBJECT_FILE_DIR = CMakeFiles\LAB_EDA_II.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LAB_EDA_II
@@ -69,7 +75,7 @@ build CMakeFiles/LAB_EDA_II.dir/funciones_main.c.obj: C_COMPILER__LAB_EDA_II_Deb
 #############################################
 # Link the executable LAB_EDA_II.exe
 
-build LAB_EDA_II.exe: C_EXECUTABLE_LINKER__LAB_EDA_II_Debug CMakeFiles/LAB_EDA_II.dir/main.c.obj CMakeFiles/LAB_EDA_II.dir/funciones_main.c.obj
+build LAB_EDA_II.exe: C_EXECUTABLE_LINKER__LAB_EDA_II_Debug CMakeFiles/LAB_EDA_II.dir/main.c.obj CMakeFiles/LAB_EDA_II.dir/funciones_main.c.obj CMakeFiles/LAB_EDA_II.dir/funciones_user.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LAB_EDA_II.dir
