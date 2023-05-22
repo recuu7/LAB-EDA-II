@@ -26,9 +26,10 @@ typedef struct {
 void iniciar_lista(Lista_usuarios* lista);
 void iniciar_usuario(User* usuario);
 void pedir_datos(User* usuario);
-void nuevo_usuario(User* usuario);
+void nuevo_usuario(Lista_usuarios* lista);
 void poner_lista(Lista_usuarios* lista, User* usuario);
 
+void lista_todos_usuarios(Lista_usuarios* lista);
 
 
 

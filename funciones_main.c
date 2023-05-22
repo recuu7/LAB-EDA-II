@@ -3,9 +3,9 @@
 #include "funciones_main.h"
 
 void iniciar_lista(Lista_usuarios* lista){
+    lista->size = 0;
     lista->ultimo = NULL;
     lista->primero = NULL;
-    lista->size = 0;
 }
 
 void iniciar_usuario(User* usuario){
@@ -25,7 +25,7 @@ void pedir_datos(User* usuario){
     scanf("%d", &usuario->age);
     printf("Escriba su email:\n");
     scanf("%s", usuario->email);
-    printf("Ubicación en la que reside:\n");
+    printf("Ubicacion en la que reside:\n");
     scanf("%s", usuario->location);
     int i = 0; while (i < 5){
         printf("Preferencia %d:\n", i+1);
@@ -35,7 +35,7 @@ void pedir_datos(User* usuario){
 }
 
 void poner_lista(Lista_usuarios* lista, User* usuario){
-    Node_lista* nodeLista = NULL;
+    Node_lista* nodeLista = (Node_lista*) malloc(sizeof(Node_lista));
     nodeLista->usuario = usuario;
     nodeLista->siguiente = NULL;
 
@@ -52,9 +52,20 @@ void poner_lista(Lista_usuarios* lista, User* usuario){
 
     lista->size++;
 }
-void nuevo_usuario(User* usuario){
+
+void nuevo_usuario(Lista_usuarios* lista){
+    User* usuario = (User*) malloc(sizeof(User));
     iniciar_usuario(usuario);
     pedir_datos(usuario);
-    Lista_usuarios *lista = NULL;
     poner_lista(lista, usuario);
+    printf("Usuario anadido correctamente!\n\n");
+}
+
+void lista_todos_usuarios(Lista_usuarios* lista){
+    printf("Todos los usuarios registrados son:\n");
+    Node_lista* nodeLista = lista->primero;
+    while (nodeLista != NULL){
+        printf("- %s\n", nodeLista->usuario->name);
+        nodeLista = nodeLista->siguiente;
+    }
 }
