@@ -28,8 +28,8 @@ void iniciar_usuario(User* usuario);
 void pedir_datos(User* usuario);
 void nuevo_usuario(Lista_usuarios* lista);
 void poner_lista(Lista_usuarios* lista, User* usuario);
-void lista_usuarios_file(FILE* usuarios_registrados);
-
+void lista_usuarios_file(char* fichero, Lista_usuarios* lista);
+void leer_nombres_fichero(FILE* f);
 void lista_todos_usuarios(Lista_usuarios* lista);
 
 

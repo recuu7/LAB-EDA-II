@@ -35,7 +35,7 @@ void pedir_datos(User* usuario){
 }
 
 void poner_lista(Lista_usuarios* lista, User* usuario){
-    Node_lista* nodeLista = (Node_lista*) malloc(sizeof(Node_lista));
+    Node_lista* nodeLista = (Node_lista*) malloc(sizeof(Node_lista)); // creamos espacio dinamicamente para poner el usuario en la lista
     nodeLista->usuario = usuario;
     nodeLista->siguiente = NULL;
 
@@ -53,27 +53,63 @@ void poner_lista(Lista_usuarios* lista, User* usuario){
     lista->size++;
 }
 
+void leer_nombres_fichero(FILE* f){
+    char nombre[100];
+    int i = 1;
+    int a = fscanf(f,"%s", nombre);
+    while (a == 1){
+        printf("%d. %s\n", i, nombre);
+        i++;
+        a = fscanf(f,"%s", nombre);
+    }
+}
+
+void lista_usuarios_file(char* fichero, Lista_usuarios* lista){
+    FILE* f = fopen(fichero,"w");
+    if (f == NULL)
+        printf("Fichero no encontrado\n");
+
+    Node_lista* nodeLista = lista->primero;
+
+    if (lista->primero == NULL){
+
+    }
+
+    else {
+
+    }
+
+    while (nodeLista != NULL){
+        fprintf(f, "%s\n", nodeLista->usuario->name);
+        nodeLista = nodeLista->siguiente;
+    }
+
+    fclose(f);
+}
+
 void nuevo_usuario(Lista_usuarios* lista){
     User* usuario = (User*) malloc(sizeof(User));
     iniciar_usuario(usuario);
     pedir_datos(usuario);
     poner_lista(lista, usuario);
-    printf("\nUsuario anadido correctamente!\n\n");
+    lista_usuarios_file("usuarios.txt", lista);
+    printf("\nUsuario anadido correctamente!\n");
 }
 
 void lista_todos_usuarios(Lista_usuarios* lista){
-    printf("\nTodos los usuarios registrados son:\n");
     Node_lista* nodeLista = lista->primero;
-    int i = 1;
-    while (nodeLista != NULL){
-        printf("%d. %s\n", i, nodeLista->usuario->name);
-        i++;
-        nodeLista = nodeLista->siguiente;
+
+    if (nodeLista == NULL)
+        printf("No hay ningun usuario registrado.\n");
+    else {
+        printf("\nTodos los usuarios registrados son:\n");
+        int i = 1;
+        while (nodeLista != NULL) {
+            printf("%d. %s\n", i, nodeLista->usuario->name);
+            i++;
+            nodeLista = nodeLista->siguiente;
+        }
+        printf("\n\n");
     }
-    printf("\n\n");
-}
-
-void lista_usuarios_file(FILE* f){
-
 }
 

@@ -10,4 +10,4 @@ add_executable(LAB_EDA_II
         .idea/vcs.xml
         .idea/workspace.xml
         main.c
-        README.md funciones_main.c funciones_user.c funciones_user.h)
+        funciones_main.c funciones_user.c funciones_user.h "usuarios.txt")
