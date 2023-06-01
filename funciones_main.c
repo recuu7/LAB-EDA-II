@@ -1,6 +1,6 @@
 #include <string.h>
 #include <stdio.h>
-#include "funciones_main.h"
+#include "estructuras_y_funciones.h"
 
 void iniciar_lista(Lista_usuarios* lista){
     lista->size = 0;
@@ -9,27 +9,27 @@ void iniciar_lista(Lista_usuarios* lista){
 }
 
 void iniciar_usuario(User* usuario){
-    usuario->name[0] = '0';
-    usuario->age = 0;
+    usuario->nombre[0] = '0';
+    usuario->edad = 0;
     usuario->email[0] = '0';
-    usuario->location[0] = '0';
+    usuario->ubicacion[0] = '0';
     int i = 0; while (i < 5){
-        usuario->like[i][0] = '0';
+        usuario->gustos[i][0] = '0';
         i++;}
 }
 
 void pedir_datos(User* usuario){
     printf("\nEscriba el nombre de usuario:\n");
-    scanf("%s", usuario->name);
+    scanf("%s", usuario->nombre);
     printf("Edad actual:\n");
-    scanf("%d", &usuario->age);
+    scanf("%d", &usuario->edad);
     printf("Escriba su email:\n");
     scanf("%s", usuario->email);
     printf("Ubicacion en la que reside:\n");
-    scanf("%s", usuario->location);
+    scanf("%s", usuario->ubicacion);
     int i = 0; while (i < 5){
         printf("Preferencia %d:\n", i+1);
-        scanf("%s", usuario->like[i]);
+        scanf("%s", usuario->gustos[i]);
         i++;
     }
 }
@@ -51,40 +51,7 @@ void poner_lista(Lista_usuarios* lista, User* usuario){
     }
 
     lista->size++;
-}
-
-void leer_nombres_fichero(FILE* f){
-    char nombre[100];
-    int i = 1;
-    int a = fscanf(f,"%s", nombre);
-    while (a == 1){
-        printf("%d. %s\n", i, nombre);
-        i++;
-        a = fscanf(f,"%s", nombre);
-    }
-}
-
-void lista_usuarios_file(char* fichero, Lista_usuarios* lista){
-    FILE* f = fopen(fichero,"w");
-    if (f == NULL)
-        printf("Fichero no encontrado\n");
-
-    Node_lista* nodeLista = lista->primero;
-
-    if (lista->primero == NULL){
-
-    }
-
-    else {
-
-    }
-
-    while (nodeLista != NULL){
-        fprintf(f, "%s\n", nodeLista->usuario->name);
-        nodeLista = nodeLista->siguiente;
-    }
-
-    fclose(f);
+    printf("Usuario añadido correctamente!\n\n");
 }
 
 void nuevo_usuario(Lista_usuarios* lista){
@@ -92,15 +59,12 @@ void nuevo_usuario(Lista_usuarios* lista){
     iniciar_usuario(usuario);
     pedir_datos(usuario);
     poner_lista(lista, usuario);
-    lista_usuarios_file("usuarios.txt", lista);
-    printf("\nUsuario anadido correctamente!\n");
 }
 
 void lista_todos_usuarios(Lista_usuarios* lista){
     Node_lista* nodeLista = lista->primero;
-
     if (nodeLista == NULL)
-        printf("No hay ningun usuario registrado.\n");
+        printf("No hay ningun usuario registrado.\n\n");
     else {
         printf("\nTodos los usuarios registrados son:\n");
         int i = 1;
@@ -112,4 +76,3 @@ void lista_todos_usuarios(Lista_usuarios* lista){
         printf("\n\n");
     }
 }
-

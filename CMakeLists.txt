@@ -9,5 +9,5 @@ add_executable(LAB_EDA_II
         .idea/modules.xml
         .idea/vcs.xml
         .idea/workspace.xml
-        main.c
-        funciones_main.c funciones_user.c funciones_user.h "usuarios.txt")
+        main_menus.c
+        funciones_main.c funciones_user.c "usuarios.txt" cola_y_lista.c funciones_fichero_file.c estructuras_y_funciones.h)

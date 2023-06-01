@@ -1,33 +1,31 @@
 #include <string.h>
-#include <stdio.h>
-#include "funciones_user.h"
-#include "funciones_main.h"
+#include "estructuras_y_funciones.h"
+
+User* elegir_usuario(Lista_usuarios* lista) {
+    char nombre[100];
+    printf("Que usuario quiere seleccionar?\n");
+    scanf("%s", nombre);
+
+    User *usuario = buscar_usuario(nombre, lista);
+    if (usuario == NULL) {
+        printf("Usuario no encontrado.\n\n");
+        return NULL;
+    } else
+        return usuario;
+}
 
 User* buscar_usuario(char* nombre_a_buscar, Lista_usuarios* lista){
     Node_lista* nodeLista = lista->primero;
     while (nodeLista != NULL){
-        if (strcmp(nodeLista->usuario->name, nombre_a_buscar) == 0)
+        if (strcmp(nodeLista->usuario->nombre, nombre_a_buscar) == 0) {
             return nodeLista->usuario;
+        }
         nodeLista = nodeLista->siguiente;
     }
     return NULL;
 }
 
-User* seleccion_usuario(Lista_usuarios* lista){
-    char nombre[100];
-    scanf("%s", nombre);
-
-    User* usuario = buscar_usuario(nombre, lista);
-    if (usuario->name == nombre)
-        return usuario;
-    else
-        return NULL;
+char* nombre_usuario_a_buscar(User* usuario){
+    return usuario->nombre;
 }
 
-User* usuario_definitivo(Lista_usuarios* lista){
-    User* usuario = seleccion_usuario(lista);
-    if (usuario == NULL)
-        return NULL;
-    else
-        return usuario;
-}

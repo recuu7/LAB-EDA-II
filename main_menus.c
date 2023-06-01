@@ -1,17 +1,22 @@
-
 # include "stdio.h"
-# include "funciones_main.h"
+# include "estructuras_y_funciones.h"
 
 int end_program(){
+    printf("\nGracias por usar nuestra aplicacion!\n");
+    printf("Hecha por Sergi Panyos, Sergi Recuero, David Romero y Saul Ruiz.\n");
     return 0;
 }
 
 void menu_usuario(Lista_usuarios* lista){
+    User* usuario = elegir_usuario(lista);
+    if (usuario == NULL)
+        return;
+
     int menu = 0;
     while (menu != 5) {
         printf("\n1) Enviar solicitudes de amistad.\n");
         printf("2) Gestionar las solicitudes pendientes.\n");
-        printf("3) Realizar una publicación.\n");
+        printf("3) Realizar una publicacion.\n");
         printf("4) Listar las publicaciones del usuario seleccionado.\n");
         printf("5) Volver al menu principal.\n");
         scanf("%d", &menu);
@@ -32,9 +37,11 @@ void menu_usuario(Lista_usuarios* lista){
 }
 
 void mostrar_menu(Lista_usuarios* lista){
+    printf("BIENVENIDO!\n\n");
     int menu = 0;
     while (menu != 4) {
-        printf("\n1) Insertar un nuevo usuario.\n");
+        printf("Que desea hacer?\n");
+        printf("1) Insertar un nuevo usuario.\n");
         printf("2) Listar todos los usuarios existentes.\n");
         printf("3) Operar con un usuario especifico.\n");
         printf("4) Salir.\n");
@@ -46,20 +53,17 @@ void mostrar_menu(Lista_usuarios* lista){
             lista_todos_usuarios(lista);
         else if (menu == 3)
             menu_usuario(lista);
-        else if (menu == 4){
-            printf("\nGracias por usar nuestra aplicacion!\n");
-            printf("Hecha por Sergi Panyos, Sergi Recuero, David Romero y Saul Ruiz.\n");
+        else if (menu == 4) {
             end_program();
         }
         else
-            printf("Respuesta invalida.\n\n");
+            printf("Respuesta invalida.\n");
     }
 }
 
 int main() {
     Lista_usuarios lista;
     iniciar_lista(&lista);
-    FILE* f = fopen("usuarios.txt","r");
-    leer_nombres_fichero(f);
+
     mostrar_menu(&lista);
 }

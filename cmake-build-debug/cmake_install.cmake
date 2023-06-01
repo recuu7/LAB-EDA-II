@@ -1,4 +1,4 @@
-# Install script for directory: D:/Uni/LAB-EDA-II
+# Install script for directory: D:/Uni/EDA II/LAB-EDA-II
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Uni/LAB-EDA-II/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Uni/EDA II/LAB-EDA-II/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

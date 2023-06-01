@@ -1,5 +1,7 @@
 # ninja log v5
-58	398	7065391020227591	CMakeFiles/LAB_EDA_II.dir/funciones_main.c.obj	923c52295a3cf261
-7	351	7065391019773220	CMakeFiles/LAB_EDA_II.dir/main.c.obj	5efc20b7ff1e6c07
-399	881	7065391025080855	LAB_EDA_II.exe	fe1bb9cb02a85f8b
-34	358	7065391019856551	CMakeFiles/LAB_EDA_II.dir/funciones_user.c.obj	f514d2baa9008916
+3	165	7073346370506986	CMakeFiles/LAB_EDA_II.dir/funciones_main.c.obj	bf627d9cc808c2ca
+2	129	7073346054135978	CMakeFiles/LAB_EDA_II.dir/main.c.obj	beeec32469bc8d06
+41	366	7073344211012382	CMakeFiles/LAB_EDA_II.dir/cola_y_lista.c.obj	ac7d00c7da97950f
+166	390	7073346372721383	LAB_EDA_II.exe	636da48db3443c6d
+3	136	7073345085477694	CMakeFiles/LAB_EDA_II.dir/funciones_user.c.obj	2defe76fe3e9fb3b
+60	462	7073344212069545	CMakeFiles/LAB_EDA_II.dir/funciones_fichero_file.c.obj	e3dfe594eae8050e
