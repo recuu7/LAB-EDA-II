@@ -21,7 +21,7 @@ void escribir_file_usuario(char* fichero, User* usuario){
         printf("Fichero no encontrado.\n");
     leer_nombres_fichero(f);
 
-    fprintf(f,"%s",usuario->name);
+    fprintf(f,"%s",usuario->nombre);
 
     fclose(f);
 

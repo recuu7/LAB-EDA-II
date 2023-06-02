@@ -32,6 +32,8 @@ void pedir_datos(User* usuario){
         scanf("%s", usuario->gustos[i]);
         i++;
     }
+    printf("Introduzca su password:\n");
+    scanf("%s",usuario->password);
 }
 
 void poner_lista(Lista_usuarios* lista, User* usuario){
@@ -51,7 +53,6 @@ void poner_lista(Lista_usuarios* lista, User* usuario){
     }
 
     lista->size++;
-    printf("Usuario añadido correctamente!\n\n");
 }
 
 void nuevo_usuario(Lista_usuarios* lista){
@@ -59,6 +60,9 @@ void nuevo_usuario(Lista_usuarios* lista){
     iniciar_usuario(usuario);
     pedir_datos(usuario);
     poner_lista(lista, usuario);
+    iniciar_solicitudes(usuario);
+    iniciar_amistades(usuario);
+    printf("\nBienvenido por primera vez @%s!\n", usuario->nombre);
 }
 
 void lista_todos_usuarios(Lista_usuarios* lista){
@@ -69,7 +73,7 @@ void lista_todos_usuarios(Lista_usuarios* lista){
         printf("\nTodos los usuarios registrados son:\n");
         int i = 1;
         while (nodeLista != NULL) {
-            printf("%d. %s\n", i, nodeLista->usuario->name);
+            printf("%d. %s\n", i, nodeLista->usuario->nombre);
             i++;
             nodeLista = nodeLista->siguiente;
         }

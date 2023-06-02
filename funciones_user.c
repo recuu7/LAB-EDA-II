@@ -6,18 +6,22 @@ User* elegir_usuario(Lista_usuarios* lista) {
     printf("Que usuario quiere seleccionar?\n");
     scanf("%s", nombre);
 
-    User *usuario = buscar_usuario(nombre, lista);
+    User* usuario = buscar_usuario(nombre, lista);
     if (usuario == NULL) {
         printf("Usuario no encontrado.\n\n");
         return NULL;
-    } else
+    }
+    else {
+        printf("\nBienvenido de nuevo @%s!\n", usuario->nombre);
         return usuario;
+    }
 }
 
-User* buscar_usuario(char* nombre_a_buscar, Lista_usuarios* lista){
+User* buscar_usuario(char* nombre_a_buscar, Lista_usuarios* lista) {
     Node_lista* nodeLista = lista->primero;
     while (nodeLista != NULL){
-        if (strcmp(nodeLista->usuario->nombre, nombre_a_buscar) == 0) {
+        int a = strcmp(nodeLista->usuario->nombre, nombre_a_buscar);
+        if (a == 0) {
             return nodeLista->usuario;
         }
         nodeLista = nodeLista->siguiente;
@@ -25,7 +29,17 @@ User* buscar_usuario(char* nombre_a_buscar, Lista_usuarios* lista){
     return NULL;
 }
 
-char* nombre_usuario_a_buscar(User* usuario){
+char* nombre_usuario_a_buscar(User* usuario) {
     return usuario->nombre;
 }
 
+int login(User* usuario) {
+    char password[100];
+    printf("Introduzca el password de @%s:\n", usuario->nombre);
+    scanf("%s",password);
+
+    if (strcmp(password, usuario->password) == 0)
+        return 1;
+    else
+        return -1;
+}
