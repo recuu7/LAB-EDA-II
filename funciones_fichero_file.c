@@ -2,37 +2,38 @@
 #include <stdio.h>
 #include "estructuras_y_funciones.h"
 
-void leer_nombres_fichero(FILE* f){
-    char nombre[100];
-    int i = 1, a = fscanf(f,"%s", nombre);
-    if (a == 0) printf("\nNo hay ningun usuario registrado.\n");
+void usuarios_fichero(Lista_usuarios* lista) {
+    FILE* f = fopen("users.txt","r");
 
-    printf("\nTodos los usuarios registrados:\n");
-    while (a == 1){
-        printf("%d. %s\n", i, nombre);
-        i++;
-        a = fscanf(f,"%s", nombre);
+    if (f == NULL)
+        printf("No se ha encontrado el fichero!\n");
+
+    while (!feof(f)) {
+        User* usuario = leer_usuarios(f);
+        if (usuario != NULL)
+            poner_lista(lista,usuario);
     }
 }
 
-void escribir_file_usuario(char* fichero, User* usuario){
-    FILE* f = fopen(fichero,"w");
-    if (f == NULL)
-        printf("Fichero no encontrado.\n");
-    leer_nombres_fichero(f);
+User* leer_usuarios(FILE* f) {
+    User* usuario = (User*) malloc(sizeof(User));
+    iniciar_usuario(usuario);
 
-    fprintf(f,"%s",usuario->nombre);
+    int a = fscanf(f,"%s %d %s %s %s %s %s %s %s %s", usuario->nombre, &usuario->edad, usuario->email, usuario->ubicacion, usuario->gustos1, usuario->gustos2, usuario->gustos3, usuario->gustos4, usuario->gustos5, usuario->password);
+    if (a == 0) {
+        printf("%s",usuario->nombre);
+        return NULL;}
 
-    fclose(f);
-
-    printf("\nUsuario anadido correctamente!\n");
+    else
+        return usuario;
 }
 
-void lista_usuarios_file(char* fichero){
-    FILE* f = fopen(fichero,"r");
-    if (f == NULL)
-        printf("Fichero no encontrado.\n");
+void agregar_usuario_lista(User* usuario) {
+    FILE* f = fopen("users.txt","a");
 
-    leer_nombres_fichero(f);
-    fclose(f);
+    if (f == NULL)
+        printf("No se ha encontrado el fichero!\n");
+    else {
+        fprintf(f,"\n%s %d %s %s %s %s %s %s %s %s", usuario->nombre, usuario->edad, usuario->email, usuario->ubicacion, usuario->gustos1, usuario->gustos2, usuario->gustos3, usuario->gustos4, usuario->gustos5, usuario->password);
+    }
 }

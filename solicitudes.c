@@ -6,14 +6,14 @@ void iniciar_solicitudes (User* usuario) {
     solicitudes->usuario_solicitado = usuario;
     solicitudes->primera = 0;
     solicitudes->ultima = 0;
-    usuario->solicitudes = solicitudes;
+    usuario->solicitudes = NULL;
 }
 
 void iniciar_amistades (User* usuario) {
-    Amistades* amistades = (Amistades*)malloc(sizeof(Amistades));
+    Amistades* amistades = (Amistades*) malloc(sizeof(Amistades));
     amistades->size = 0;
     amistades->primero = NULL;
-    usuario->amistades = amistades;
+    usuario->amistades = NULL;
 }
 
 void enviar_solicitud_a_usuario(Lista_usuarios* lista, User* usuario_solicitud){

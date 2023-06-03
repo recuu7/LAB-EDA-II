@@ -9,7 +9,11 @@ typedef struct {
     int edad;
     char email[100];
     char ubicacion[100];
-    char gustos[5][100];
+    char gustos1[100];
+    char gustos2[100];
+    char gustos3[100];
+    char gustos4[100];
+    char gustos5[100];
     struct Solicitudes* solicitudes;
     struct Amistades* amistades;
 } User;
@@ -69,6 +73,9 @@ void iniciar_amistades (User* usuario);
 void iniciar_solicitudes (User* usuario);
 Solicitudes* agregar_solicitud_a_usuario(Solicitudes* lista, User* usuario);
 int login(User* usuario);
+User* leer_usuarios(FILE* f);
+void usuarios_fichero(Lista_usuarios* lista);
+void agregar_usuario_lista(User* usuario);
 
 
 

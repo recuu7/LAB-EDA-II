@@ -17,6 +17,8 @@ void menu_usuario(Lista_usuarios* lista){
         printf("Password incorrecto!\n");
         return;
     }
+    else
+        printf("Password correcto!\n");
 
     int menu = 0;
     while (menu != 5) {
@@ -70,6 +72,8 @@ void mostrar_menu(Lista_usuarios* lista){
 int main() {
     Lista_usuarios lista;
     iniciar_lista(&lista);
+
+    usuarios_fichero(&lista);
 
     mostrar_menu(&lista);
 }

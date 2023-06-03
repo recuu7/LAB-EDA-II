@@ -13,9 +13,11 @@ void iniciar_usuario(User* usuario){
     usuario->edad = 0;
     usuario->email[0] = '0';
     usuario->ubicacion[0] = '0';
-    int i = 0; while (i < 5){
-        usuario->gustos[i][0] = '0';
-        i++;}
+    usuario->gustos1[0] = '0';
+    usuario->gustos2[0] = '0';
+    usuario->gustos3[0] = '0';
+    usuario->gustos4[0] = '0';
+    usuario->gustos5[0] = '0';
 }
 
 void pedir_datos(User* usuario){
@@ -27,11 +29,16 @@ void pedir_datos(User* usuario){
     scanf("%s", usuario->email);
     printf("Ubicacion en la que reside:\n");
     scanf("%s", usuario->ubicacion);
-    int i = 0; while (i < 5){
-        printf("Preferencia %d:\n", i+1);
-        scanf("%s", usuario->gustos[i]);
-        i++;
-    }
+    printf("Gusto 1:\n");
+    scanf("%s", usuario->gustos1);
+    printf("Gusto 2:\n");
+    scanf("%s", usuario->gustos2);
+    printf("Gusto 3:\n");
+    scanf("%s", usuario->gustos3);
+    printf("Gusto 4:\n");
+    scanf("%s", usuario->gustos4);
+    printf("Gusto 5:\n");
+    scanf("%s", usuario->gustos5);
     printf("Introduzca su password:\n");
     scanf("%s",usuario->password);
 }
@@ -60,6 +67,7 @@ void nuevo_usuario(Lista_usuarios* lista){
     iniciar_usuario(usuario);
     pedir_datos(usuario);
     poner_lista(lista, usuario);
+    agregar_usuario_lista(usuario);
     iniciar_solicitudes(usuario);
     iniciar_amistades(usuario);
     printf("\nBienvenido por primera vez @%s!\n", usuario->nombre);
