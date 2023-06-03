@@ -29,10 +29,6 @@ User* buscar_usuario(char* nombre_a_buscar, Lista_usuarios* lista) {
     return NULL;
 }
 
-char* nombre_usuario_a_buscar(User* usuario) {
-    return usuario->nombre;
-}
-
 int login(User* usuario) {
     char password[100];
     printf("Introduzca el password de @%s:\n", usuario->nombre);

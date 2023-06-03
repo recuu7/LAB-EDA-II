@@ -10,4 +10,4 @@ add_executable(LAB_EDA_II
         .idea/vcs.xml
         .idea/workspace.xml
         main_menus.c
-        funciones_main.c funciones_user.c funciones_fichero_file.c estructuras_y_funciones.h solicitudes.c)
+        funciones_main.c funciones_user.c funciones_fichero_file.c estructuras_y_funciones.h solicitudes.c gustos_dictionary.c)

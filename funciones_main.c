@@ -68,8 +68,8 @@ void nuevo_usuario(Lista_usuarios* lista){
     pedir_datos(usuario);
     poner_lista(lista, usuario);
     agregar_usuario_lista(usuario);
-    iniciar_solicitudes(usuario);
-    iniciar_amistades(usuario);
+     // iniciar_solicitudes(usuario);
+//    iniciar_amistades(usuario);
     printf("\nBienvenido por primera vez @%s!\n", usuario->nombre);
 }
 
@@ -85,6 +85,6 @@ void lista_todos_usuarios(Lista_usuarios* lista){
             i++;
             nodeLista = nodeLista->siguiente;
         }
-        printf("\n\n");
+        printf("\n");
     }
 }

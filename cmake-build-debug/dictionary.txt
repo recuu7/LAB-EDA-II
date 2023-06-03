@@ -1,0 +1,14 @@
+futbol 2
+familia 1
+dinero 2
+universidad 1
+fiesta 4
+berga 1
+musica 1
+patum 1
+atletismo 1
+salto 1
+amigos 2
+ruleta 1
+basket 1
+coche 1

@@ -30,7 +30,8 @@ void menu_usuario(Lista_usuarios* lista){
         scanf("%d", &menu);
 
         if (menu == 1)
-            enviar_solicitud_a_usuario(lista,usuario);
+            // enviar_solicitud_a_usuario(lista,usuario);
+            return;
         else if (menu == 2)
             return;
         else if (menu == 3)
@@ -44,13 +45,37 @@ void menu_usuario(Lista_usuarios* lista){
     }
 }
 
+void menu_usuarios_existentes(Lista_usuarios* lista) {
+    int menu = 0;
+    while (menu != 4) {
+        printf("\n1) Mostrar todos los usuarios registrados.\n");
+        printf("2) Mostrar el ranking de gustos mas comunes.\n");
+        printf("3) Mostrar la edad promedio de los usuarios registrados.\n");
+        printf("4) Volver al menu principal.\n");
+        scanf("%d",&menu);
+
+        if (menu == 1) {
+            lista_todos_usuarios(lista);
+            break;
+        }
+        else if (menu == 2)
+            return;
+        else if (menu == 3)
+            return;
+        else if (menu == 4)
+            return;
+        else
+            printf("Respuesta invalida.\n\n");
+    }
+}
+
 void mostrar_menu(Lista_usuarios* lista){
     printf("BIENVENIDO!\n\n");
     int menu = 0;
     while (menu != 4) {
         printf("Que desea hacer?\n");
         printf("1) Insertar un nuevo usuario.\n");
-        printf("2) Listar todos los usuarios existentes.\n");
+        printf("2) Interactuar con usuarios existentes.\n");
         printf("3) Operar con un usuario especifico.\n");
         printf("4) Salir.\n");
         scanf("%d", &menu);
@@ -58,7 +83,7 @@ void mostrar_menu(Lista_usuarios* lista){
         if (menu == 1)
             nuevo_usuario(lista);
         else if (menu == 2)
-            lista_todos_usuarios(lista);
+            menu_usuarios_existentes(lista);
         else if (menu == 3)
             menu_usuario(lista);
         else if (menu == 4) {
