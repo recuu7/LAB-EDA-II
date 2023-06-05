@@ -1,5 +1,7 @@
 #ifndef LAB_EDA_II_ESTRUCTURAS_Y_FUNCIONES_H
 #define LAB_EDA_II_ESTRUCTURAS_Y_FUNCIONES_H
+
+#include <stdbool.h>
 #include "stdlib.h"
 #include "stdio.h"
 
@@ -49,6 +51,12 @@ typedef struct {
     Elementos* elemento;
     int size;
 } Diccionario;
+
+typedef struct FriendRequest {
+    User* sender;
+    User* receiver;
+    bool accepted;
+} FriendRequest;
 
 void iniciar_lista(Lista_usuarios* lista);
 void iniciar_usuario(User* usuario);
