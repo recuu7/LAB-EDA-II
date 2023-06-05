@@ -30,8 +30,7 @@ void menu_usuario(Lista_usuarios* lista){
         scanf("%d", &menu);
 
         if (menu == 1)
-            // enviar_solicitud_a_usuario(lista,usuario);
-            return;
+            break;
         else if (menu == 2)
             return;
         else if (menu == 3)
@@ -59,9 +58,9 @@ void menu_usuarios_existentes(Lista_usuarios* lista) {
             break;
         }
         else if (menu == 2)
-            return;
+            break;
         else if (menu == 3)
-            return;
+            break;
         else if (menu == 4)
             return;
         else

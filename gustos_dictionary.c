@@ -18,8 +18,12 @@ int buscar_gusto_diccionario(Diccionario* d, char gusto, FILE* f) {
 
 Diccionario* agregar_palabra_diccionario(char gusto, Diccionario* d) {
     FILE* f = fopen("dictionary.txt","a");
-    int a = buscar_gusto_diccionario(d,gusto,f);
+    if (f == NULL) {
+        printf("No se ha encontrado el fichero!\n");
+        return NULL;
+    }
 
+    int a = buscar_gusto_diccionario(d,gusto,f);
     if (a != 1) {
         d->elemento = (Elementos*) malloc(sizeof(Elementos));
         d->elemento->gusto[0] = gusto;
@@ -34,9 +38,14 @@ Diccionario* agregar_palabra_diccionario(char gusto, Diccionario* d) {
     return d;
 }
 
-Diccionario* leer_diccionario(FILE* f) {
+int size_dictionary(FILE* f) {
     int i = 0;
     while (!feof(f)) { i++; }
+    return i;
+}
+
+Diccionario* leer_diccionario(FILE* f) {
+    int i = size_dictionary(f);
     Diccionario* d = crear_diccionario(i);
 
     int a = fscanf(f,"%s %d",d->elemento->gusto,&d->elemento->count);

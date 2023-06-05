@@ -41,6 +41,16 @@ typedef struct {
 } Cola_usuarios;
 
 typedef struct {
+    User* usuario;
+    struct Node_pila* siguiente;
+} Node_pila ;
+
+typedef struct {
+    Node_pila* top;
+} Pila_usuarios ;
+
+
+typedef struct {
     int count;
     char gusto[100];
 } Elementos;
