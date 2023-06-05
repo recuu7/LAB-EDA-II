@@ -7,13 +7,13 @@ Diccionario* crear_diccionario(int n) {
     return d;
 }
 
-int buscar_gusto_diccionario(Diccionario* d, char gusto, FILE* f){
-    fscanf(f,"%s %d", d->elemento->gusto, &d->elemento->count);
-
-    if (d->elemento->gusto == &gusto)
-        return 1;
-    else
-        return 2;
+int buscar_gusto_diccionario(Diccionario* d, char gusto, FILE* f) {
+    while (!feof(f)) {
+        fscanf(f,"%s %d", d->elemento->gusto, &d->elemento->count);
+        if (d->elemento->gusto == &gusto)
+            return 1;
+    }
+    return 2;
 }
 
 Diccionario* agregar_palabra_diccionario(char gusto, Diccionario* d) {
@@ -21,13 +21,23 @@ Diccionario* agregar_palabra_diccionario(char gusto, Diccionario* d) {
     int a = buscar_gusto_diccionario(d,gusto,f);
 
     if (a != 1) {
+        d->elemento = (Elementos*) malloc(sizeof(Elementos));
         d->elemento->gusto[0] = gusto;
+        d->elemento->count = 1;
+        d->size += 1;
+        fprintf(f,"\n%s %d", d->elemento->gusto, d->elemento->count);
+    }
+    else {
+        d->elemento->count += 1;
     }
 
+    return d;
 }
 
-Diccionario* leer_diccionario(FILE* f){
-    Diccionario* d = crear_diccionario(100);
+Diccionario* leer_diccionario(FILE* f) {
+    int i = 0;
+    while (!feof(f)) { i++; }
+    Diccionario* d = crear_diccionario(i);
 
     int a = fscanf(f,"%s %d",d->elemento->gusto,&d->elemento->count);
     if (a == 0)
