@@ -23,7 +23,6 @@ User* leer_usuarios(FILE* f) {
     if (a == 0) {
         printf("%s",usuario->nombre);
         return NULL;}
-
     else
         return usuario;
 }

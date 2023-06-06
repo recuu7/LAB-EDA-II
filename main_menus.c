@@ -62,8 +62,9 @@ void menu_usuarios_existentes(Lista_usuarios* lista) {
         else if (menu == 2) {
             top_3_dictionary();
             break; }
-        else if (menu == 3)
-            break;
+        else if (menu == 3) {
+            edad_promedio();
+            break; }
         else if (menu == 4) return;
         else
             printf("Respuesta invalida.\n\n");

@@ -39,3 +39,22 @@ int login(User* usuario) {
     else
         return -1;
 }
+
+void edad_promedio() {
+    int edad = 0, total_usuarios = 0;
+    int mediana;
+    FILE* f = fopen("users.txt","r");
+    if (f == NULL) {
+        printf("No se ha encontrado el archivo.\n");
+        return;
+    }
+
+    while (!feof(f)) {
+        User* temporal = leer_usuarios(f);
+        edad += temporal->edad;
+        total_usuarios++;
+    }
+
+    mediana = (edad/total_usuarios);
+    printf("La edad mediana de los usuarios registrados es %d a%cos.\n\n",mediana,164);
+}

@@ -82,7 +82,7 @@ void enviar_solicitud(User* usuario_que_envia, User* usuario_que_recibe, Stack_u
 int stack_vacio(Stack_usuarios* pila);
 Stack_usuarios* iniciar_pila(Stack_usuarios* pila);
 void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista);
-
+void edad_promedio();
 
 
 
