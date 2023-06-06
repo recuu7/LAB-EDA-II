@@ -36,9 +36,3 @@ User* buscar_usuario_cola(Cola_usuarios* cola, char* nombre) {
     }
     return NULL;
 }
-
-void agregar_usuario_amistades(User* usuario, User* usuario_solicitud) {
-    if (buscar_usuario_cola(&usuario->solicitudes, usuario_solicitud->nombre) == NULL) {
-        poner_usuario_en_cola(usuario, &usuario->solicitudes);
-    }
-}

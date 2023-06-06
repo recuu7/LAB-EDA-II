@@ -1,4 +1,5 @@
 #include "estructuras_y_funciones.h"
+#include "string.h"
 
 Diccionario* crear_diccionario(int n) {
     Diccionario* d = (Diccionario*) malloc(sizeof(Diccionario));
@@ -38,28 +39,46 @@ Diccionario* agregar_palabra_diccionario(char gusto, Diccionario* d) {
     return d;
 }
 
-int size_dictionary(FILE* f) {
-    int i = 0;
-    while (!feof(f)) { i++; }
-    return i;
+Diccionario* ordenar_gustos_por_count(Diccionario d[], int num) {
+    for (int i = 0; i < num-1; i++) {
+        for (int j = 0; j < num-i-1; j++) {
+            if (d[j].elemento->count < d[j+1].elemento->count) {
+                Diccionario new_dic = d[j];
+                d[j] = d[j+1];
+                d[j+1] = new_dic;
+            }
+        }
+    }
+    return d;
 }
 
-Diccionario* leer_diccionario(FILE* f) {
-    int i = size_dictionary(f);
-    Diccionario* d = crear_diccionario(i);
-
-    int a = fscanf(f,"%s %d",d->elemento->gusto,&d->elemento->count);
-    if (a == 0)
-        return NULL;
-    else
-        return d;
-}
-
-void top_3_dictionary(Diccionario* d) {
+void top_3_dictionary() {
     FILE* f = fopen("dictionary.txt","r");
+    if (f == NULL) {
+        printf("No se ha encontrado el archivo!\n");
+        return;
+    }
 
-    while (!feof(f)) {
-        d = leer_diccionario(f);
+    Diccionario d[25];
+    int i = 0;
+    char buffer[100];
 
+    while (fgets(buffer,sizeof(buffer),f) != NULL) {
+        char gusto[100];
+        int num_veces_gusto;
+        scanf(buffer,"%s %d",gusto,&num_veces_gusto);
+        strcpy(d[i].elemento->gusto,gusto);
+        d[i].elemento->count = num_veces_gusto;
+        i++;
+    }
+
+    fclose(f);
+
+    ordenar_gustos_por_count(d, 25);
+
+    printf("Top 3 trendic topics:\n");
+    int a = 1;
+    for (int j = 0; j < 3; j++) {
+        printf("%d. %s (%d).\n",a,d[j].elemento->gusto,d[j].elemento->count);
     }
 }

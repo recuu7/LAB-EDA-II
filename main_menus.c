@@ -29,16 +29,21 @@ void menu_usuario(Lista_usuarios* lista){
         printf("5) Volver al menu principal.\n");
         scanf("%d", &menu);
 
-        if (menu == 1)
-            break;
-        else if (menu == 2)
-            return;
-        else if (menu == 3)
-            return;
-        else if (menu == 4)
-            return;
-        else if (menu == 5)
-            return;
+        if (menu == 1) {
+            menu_solicitudes(usuario, lista);
+            break; }
+        else if (menu == 2) {
+
+            break; }
+        else if (menu == 3) {
+            escribir_publication(usuario);
+            break; }
+        else if (menu == 4) {
+            mirar_publicaciones_usuario(usuario);
+            break; }
+        else if (menu == 5) {
+
+            break; }
         else
             printf("Respuesta invalida.\n\n");
     }
@@ -55,10 +60,10 @@ void menu_usuarios_existentes(Lista_usuarios* lista) {
 
         if (menu == 1) {
             lista_todos_usuarios(lista);
-            break;
-        }
-        else if (menu == 2)
-            break;
+            break; }
+        else if (menu == 2) {
+            top_3_dictionary();
+            break; }
         else if (menu == 3)
             break;
         else if (menu == 4)

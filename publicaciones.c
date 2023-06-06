@@ -1,29 +1,21 @@
-//
-// Created by saulr on 05/06/2023.
-//
-#define MAX_PUBLICATION_LENGTH 120
 #include <stdbool.h>
 #include "stdlib.h"
 #include "stdio.h"
 #include <string.h>
 #include "estructuras_y_funciones.h"
-typedef struct Publicacion {
-    char content[MAX_PUBLICATION_LENGTH + 1];
-    struct Publicacion* next;
-} Publicacion;
 
-Publicacion* crearPublicacion(const char* content){
-    Publicacion* nuevaPublicacion = (Publicacion*)malloc(sizeof(Publicacion));
+Publicacion* crear_publicacion(const char* content){
+    Publicacion* nuevaPublicacion = (Publicacion*) malloc(sizeof(Publicacion));
     strncpy(nuevaPublicacion->content, content, MAX_PUBLICATION_LENGTH);
     nuevaPublicacion->next = NULL;
     return nuevaPublicacion;
 }
-void addPublicationToTimeline(User* user, const char* content) {
-    Publicacion* nuevaPublicacion = crearPublicacion(content);
+void publicar_post_perfil(User* user, const char* content) {
+    Publicacion* nuevaPublicacion = crear_publicacion(content);
 
-    if (user->timeline == NULL) {
+    if (user->timeline == NULL)
         user->timeline = nuevaPublicacion;
-    } else {
+    else {
         Publicacion* currentPublicacion = user->timeline;
         while (currentPublicacion->next != NULL) {
             currentPublicacion = currentPublicacion->next;
@@ -31,7 +23,7 @@ void addPublicationToTimeline(User* user, const char* content) {
         currentPublicacion->next = nuevaPublicacion;
     }
 }
-void mirarTimeline(User* user) {
+void mirar_publicaciones_usuario(User* user) {
     Publicacion* currentPublicacion = user->timeline;
     printf("Timeline for @%s:\n", user->nombre);
     while (currentPublicacion != NULL) {
@@ -39,7 +31,8 @@ void mirarTimeline(User* user) {
         currentPublicacion = currentPublicacion->next;
     }
 }
-void writePublication(User* user) {
+
+void escribir_publication(User* user) {
     char content[MAX_PUBLICATION_LENGTH + 1];
     printf("Escribe la publicacion (hasta %d caracteres):\n", MAX_PUBLICATION_LENGTH);
     fgets(content, sizeof(content), stdin);
@@ -49,7 +42,7 @@ void writePublication(User* user) {
         content[len - 1] = '\0';
     }
 
-    addPublicationToTimeline(user, content);
+    publicar_post_perfil(user, content);
 
     printf("Publicacion enviada correctamente!\n");
 }

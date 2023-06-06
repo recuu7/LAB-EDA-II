@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include "stdlib.h"
 #include "stdio.h"
+#define MAX_PUBLICATION_LENGTH 120
 
 typedef struct {
     char nombre[100];
@@ -16,8 +17,9 @@ typedef struct {
     char gustos3[100];
     char gustos4[100];
     char gustos5[100];
-    struct Cola_usuarios* solicitudes;
-    struct Lista_usuarios* amistades;
+    struct Pila_usuarios* solicitudes;
+    struct Cola_usuarios* amistades;
+    struct Publicacion* timeline;
 } User;
 
 typedef struct {
@@ -51,7 +53,6 @@ typedef struct {
     Node_pila* top;
 } Pila_usuarios ;
 
-
 typedef struct {
     int count;
     char gusto[100];
@@ -62,11 +63,10 @@ typedef struct {
     int size;
 } Diccionario;
 
-typedef struct FriendRequest {
-    User* sender;
-    User* receiver;
-    bool accepted;
-} FriendRequest;
+typedef struct Publicacion {
+    char content[MAX_PUBLICATION_LENGTH + 1];
+    struct Publicacion* next;
+} Publicacion;
 
 void iniciar_lista(Lista_usuarios* lista);
 void iniciar_usuario(User* usuario);
@@ -77,12 +77,24 @@ void lista_todos_usuarios(Lista_usuarios* lista);
 User* buscar_usuario(char* nombre_a_buscar, Lista_usuarios* lista);
 User* elegir_usuario(Lista_usuarios* lista);
 void enviar_solicitud_a_usuario(Lista_usuarios* lista, User* usuario_solicitud);
-void iniciar_amistades (User* usuario);
-void iniciar_solicitudes (User* usuario);
+void iniciar_amistades(User* usuario);
+void iniciar_solicitudes(User* usuario);
 int login(User* usuario);
 User* leer_usuarios(FILE* f);
 void usuarios_fichero(Lista_usuarios* lista);
 void agregar_usuario_lista(User* usuario);
+User* buscar_usuario_cola(Cola_usuarios* cola, char* nombre);
+void poner_usuario_en_cola(User* usuario, Cola_usuarios* cola);
+void menu_solicitudes(User* usuario, Lista_usuarios* lista);
+void iniciar_cola(Cola_usuarios* cola);
+void iniciar_pila(Pila_usuarios* pila);
+void top_3_dictionary();
+int size_dictionary(FILE* f);
+void escribir_publication(User* user);
+void mirar_publicaciones_usuario(User* user);
+
+
+
 
 
 

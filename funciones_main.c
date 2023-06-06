@@ -8,7 +8,7 @@ void iniciar_lista(Lista_usuarios* lista){
     lista->primero = NULL;
 }
 
-void iniciar_usuario(User* usuario){
+void iniciar_usuario(User* usuario) {
     usuario->nombre[0] = '0';
     usuario->edad = 0;
     usuario->email[0] = '0';
@@ -78,7 +78,7 @@ void lista_todos_usuarios(Lista_usuarios* lista){
     if (nodeLista == NULL)
         printf("No hay ningun usuario registrado.\n\n");
     else {
-        printf("\nTodos los usuarios registrados son:\n");
+        printf("\nTodos los usuarios registrados (ordenados por fecha de registro) son:\n");
         int i = 1;
         while (nodeLista != NULL) {
             printf("%d. %s\n", i, nodeLista->usuario->nombre);
