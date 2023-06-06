@@ -47,3 +47,18 @@ void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista) {
         enviar_solicitud(usuario,usuario_envia,&usuario_envia->solicitudes);
     }
 }
+
+/* void menu_solicitudes_recibidas(User* usuario, Lista_usuarios* lista) {
+    int a = stack_vacio(&usuario->solicitudes);
+    if (a != 1) {
+        int i = 0;
+        while (stack_vacio(&usuario->solicitudes) != 1) {
+            printf("Tienes una solicitud de %s.",);
+        }
+
+    }
+    else{
+        printf("No tienes ninguna solicitud de amistad.\n");
+        return;
+    }
+} */
