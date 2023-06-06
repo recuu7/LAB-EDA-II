@@ -30,10 +30,9 @@ void menu_usuario(Lista_usuarios* lista){
         scanf("%d", &menu);
 
         if (menu == 1) {
-            menu_solicitudes(usuario, lista);
+            menu_solicitudes_enviar(usuario,lista);
             break; }
         else if (menu == 2) {
-
             break; }
         else if (menu == 3) {
             escribir_publication(usuario);
@@ -41,9 +40,7 @@ void menu_usuario(Lista_usuarios* lista){
         else if (menu == 4) {
             mirar_publicaciones_usuario(usuario);
             break; }
-        else if (menu == 5) {
-
-            break; }
+        else if (menu == 5) return;
         else
             printf("Respuesta invalida.\n\n");
     }
@@ -66,8 +63,7 @@ void menu_usuarios_existentes(Lista_usuarios* lista) {
             break; }
         else if (menu == 3)
             break;
-        else if (menu == 4)
-            return;
+        else if (menu == 4) return;
         else
             printf("Respuesta invalida.\n\n");
     }

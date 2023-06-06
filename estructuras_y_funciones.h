@@ -17,8 +17,8 @@ typedef struct {
     char gustos3[100];
     char gustos4[100];
     char gustos5[100];
-    struct Pila_usuarios* solicitudes;
-    struct Cola_usuarios* amistades;
+    struct Stack_usuarios* solicitudes;
+    struct Lista_usuarios* amistades;
     struct Publicacion* timeline;
 } User;
 
@@ -35,23 +35,15 @@ typedef struct {
 } Lista_usuarios;
 
 typedef struct {
-    User* usuario;
-    struct Node_cola* siguiente;
-} Node_cola;
+    char* usuario;
+    char* usuario_recividor;
+    struct Node_stack* siguiente;
+} Node_stack ;
 
 typedef struct {
-    Node_cola* primero;
-    Node_cola* ultimo;
-} Cola_usuarios;
-
-typedef struct {
-    User* usuario;
-    struct Node_pila* siguiente;
-} Node_pila ;
-
-typedef struct {
-    Node_pila* top;
-} Pila_usuarios ;
+    Node_stack* top;
+    int solicitudes;
+} Stack_usuarios ;
 
 typedef struct {
     int count;
@@ -83,15 +75,15 @@ int login(User* usuario);
 User* leer_usuarios(FILE* f);
 void usuarios_fichero(Lista_usuarios* lista);
 void agregar_usuario_lista(User* usuario);
-User* buscar_usuario_cola(Cola_usuarios* cola, char* nombre);
-void poner_usuario_en_cola(User* usuario, Cola_usuarios* cola);
-void menu_solicitudes(User* usuario, Lista_usuarios* lista);
-void iniciar_cola(Cola_usuarios* cola);
-void iniciar_pila(Pila_usuarios* pila);
 void top_3_dictionary();
-int size_dictionary(FILE* f);
 void escribir_publication(User* user);
 void mirar_publicaciones_usuario(User* user);
+void enviar_solicitud(User* usuario_que_envia, User* usuario_que_recibe, Stack_usuarios* pila);
+int stack_vacio(Stack_usuarios* pila);
+Stack_usuarios* iniciar_pila(Stack_usuarios* pila);
+void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista);
+
+
 
 
 

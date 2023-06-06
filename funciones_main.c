@@ -68,8 +68,8 @@ void nuevo_usuario(Lista_usuarios* lista){
     pedir_datos(usuario);
     poner_lista(lista, usuario);
     agregar_usuario_lista(usuario);
-     // iniciar_solicitudes(usuario);
-//    iniciar_amistades(usuario);
+    iniciar_pila(&usuario->solicitudes);
+    iniciar_lista(&usuario->amistades);
     printf("\nBienvenido por primera vez @%s!\n", usuario->nombre);
 }
 

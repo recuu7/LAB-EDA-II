@@ -1,8 +1,8 @@
 futbol 3
 familia 1
-dinero 2
-universidad 3
-fiesta 6
+dinero 3
+universidad 4
+fiesta 7
 berga 1
 musica 3
 patum 1
@@ -11,5 +11,6 @@ salto 1
 amigos 4
 ruleta 1
 basket 1
-coche 1
+coche 2
 leer 1
+ropa 1

@@ -1,53 +1,49 @@
 #include "estructuras_y_funciones.h"
 
-void iniciar_pila(Pila_usuarios* pila) {
+Stack_usuarios* iniciar_pila(Stack_usuarios* pila) {
     pila->top = NULL;
+    return pila;
 }
 
-void siguiente_usuario(Pila_usuarios* pila, User* usuario) {
-    Node_pila* nodePila = (Node_pila*) malloc(sizeof(Node_pila));
-    nodePila->usuario = usuario;
-    nodePila->siguiente = pila->top;
-    pila->top = nodePila;
+int stack_vacio(Stack_usuarios* pila) {
+    if (pila->top == NULL) return 1;
+    else return 2;
 }
 
-void agregar_amigo_solicitud_amistad(User* usuario, User* usuario_solicitud) {
+void actualizar_stack(char* usuario_que_envia, char* usuario_que_recibe, Stack_usuarios* pila) {
+    Node_stack* solicitud = (Node_stack*) malloc(sizeof(Node_stack));
+    solicitud->usuario = usuario_que_envia;
+    solicitud->usuario_recividor = usuario_que_recibe;
 
+    solicitud->siguiente = pila->top;
+    pila->top = solicitud;
 }
 
-void menu_solicitudes(User* usuario, Lista_usuarios* lista) {
-    char nombre[100];
+void enviar_solicitud(User* usuario_que_envia, User* usuario_que_recibe, Stack_usuarios* pila) {
+    Node_stack* solicitud = pila->top;
 
-    printf("A quien quieres enviarle una solicitud de amistad?\n");
-    scanf("%s", nombre);
-
-    User* friend = buscar_usuario(nombre,lista);
-    if (friend == NULL) {
-        printf("Usuario no encontrado en los usuarios registrados!\n");
-        return;
+    while (solicitud != NULL) {
+        if ((solicitud->usuario == usuario_que_envia->nombre) && (solicitud->usuario_recividor == usuario_que_recibe->nombre)) {
+            printf("Solicitud invalida!\n");
+            return;
+        }
+        solicitud = solicitud->siguiente;
     }
+    actualizar_stack(usuario_que_envia->nombre,usuario_que_recibe->nombre,pila);
+    printf("Solicitud enviada correctamente a @%s.\n",usuario_que_recibe->nombre);
+}
 
-    User* newuser = buscar_usuario_cola(usuario->amistades, nombre);
-    if (newuser == NULL) {
-        poner_usuario_en_cola(newuser,usuario->amistades);
-        printf("Se ha enviado una solicitud de amistad a %s!\n", newuser->nombre);
+void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista) {
+    char usuario_a_enviar[100];
+    printf("A quien quieres enviarle una solicitud de amistad?\n");
+    scanf("%s",usuario_a_enviar);
+
+    User* usuario_envia = buscar_usuario(usuario_a_enviar,lista);
+    if (usuario_envia == NULL) {
+        printf("Usuario no encontrado.\n");
+        return;
     }
     else {
-        printf("%s ya pertenece a tus amistades.\n", newuser->nombre);
-    }
-}
-
-void gestionar_solicitudes_pendientes(Cola_usuarios* cola, User* usuario) {
-    Node_cola* nodeCola = usuario->amistades;
-    if (usuario->solicitudes == NULL) {
-        printf("No tienes ninguna solicitud pendiente!\n");
-        return;
-    }
-
-    Node_pila* nodePila = usuario->solicitudes;
-
-    printf("Solicitudes de amistad recicibidas por:\n");
-    while (usuario->solicitudes != NULL) {
-        printf("- %s", usuario->solicitudes);
+        enviar_solicitud(usuario,usuario_envia,&usuario_envia->solicitudes);
     }
 }
