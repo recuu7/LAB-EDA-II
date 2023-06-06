@@ -24,7 +24,7 @@ void publicar_post_perfil(User* user, const char* content) {
 }
 void mirar_publicaciones_usuario(User* user) {
     Publicacion* currentPublicacion = user->timeline;
-    printf("Timeline for @%s:\n", user->nombre);
+    printf("Timeline de @%s:\n", user->nombre);
     while (currentPublicacion != NULL) {
         printf("- %s\n", currentPublicacion->content);
         currentPublicacion = currentPublicacion->next;
@@ -34,7 +34,7 @@ void mirar_publicaciones_usuario(User* user) {
 void escribir_publication(User* user) {
     char content[MAX_PUBLICATION_LENGTH + 1];
     printf("Write your publication (up to %d characters):\n", MAX_PUBLICATION_LENGTH);
-    scanf("%s", content);
+    scanf(" %[^\n]s", content);
 
     publicar_post_perfil(user, content);
 
