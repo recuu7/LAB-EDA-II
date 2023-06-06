@@ -36,7 +36,8 @@ void menu_usuario(Lista_usuarios* lista){
             break; }
         else if (menu == 3) {
             escribir_publication(usuario);
-            break; }
+            break;
+        }
         else if (menu == 4) {
             mirar_publicaciones_usuario(usuario);
             break; }

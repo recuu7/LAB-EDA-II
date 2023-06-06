@@ -12,7 +12,6 @@ Publicacion* crear_publicacion(const char* content){
 }
 void publicar_post_perfil(User* user, const char* content) {
     Publicacion* nuevaPublicacion = crear_publicacion(content);
-
     if (user->timeline == NULL)
         user->timeline = nuevaPublicacion;
     else {
@@ -34,15 +33,10 @@ void mirar_publicaciones_usuario(User* user) {
 
 void escribir_publication(User* user) {
     char content[MAX_PUBLICATION_LENGTH + 1];
-    printf("Escribe la publicacion (hasta %d caracteres):\n", MAX_PUBLICATION_LENGTH);
-    fgets(content, sizeof(content), stdin);
-
-    size_t len = strlen(content);
-    if (len > 0 && content[len - 1] == '\n') {
-        content[len - 1] = '\0';
-    }
+    printf("Write your publication (up to %d characters):\n", MAX_PUBLICATION_LENGTH);
+    scanf("%s", content);
 
     publicar_post_perfil(user, content);
 
-    printf("Publicacion enviada correctamente!\n");
+    printf("Publication added successfully!\n");
 }
