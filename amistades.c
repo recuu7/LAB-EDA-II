@@ -43,5 +43,4 @@ void cola_amistades(Cola_usuarios* cola) {
         }
         printf("\n");
     }
-
 }

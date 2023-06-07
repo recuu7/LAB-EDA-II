@@ -59,15 +59,22 @@ void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista) {
         printf("Usuario no encontrado.\n");
         return;
     }
-    else {
-        enviar_solicitud(usuario,usuario_envia,&usuario_envia->solicitudes);
+
+    User* temporal = buscar_usuario_amistades(&usuario->amistades, usuario_a_enviar);
+    if (temporal != NULL) {
+        printf("El usuario ya pertenece a tus amistades.\n");
+        return;
     }
+
+    enviar_solicitud(usuario,usuario_envia,&usuario_envia->solicitudes);
+
 }
 
 void aceptar_solicitud_amistad(User* usuario) {
     User* amigo = eliminar_usuario_stack_solicitudes(&usuario->solicitudes);
     if (amigo != NULL) {
         agregar_amigo_amistades(&usuario->amistades,amigo);
+        agregar_amigo_amistades(&amigo->amistades,usuario->nombre);
     }
     printf("Solicitud de amistad aceptada a @%s!\n",amigo->nombre);
 }
@@ -107,7 +114,6 @@ void menu_solicitudes_recibidas(User* usuario) {
             }
             nodeStack = nodeStack->siguiente;
         }
-
     }
     else{
         printf("No tienes ninguna solicitud de amistad.\n");

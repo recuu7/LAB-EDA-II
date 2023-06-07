@@ -94,5 +94,6 @@ void agregar_amigo_amistades(Cola_usuarios* amigos, User* usuario);
 void menu_solicitudes_recibidas(User* usuario);
 void iniciar_cola_amistades(Cola_usuarios* amigos);
 void cola_amistades(Cola_usuarios* cola);
+User* buscar_usuario_amistades(Cola_usuarios* cola, const char* nombre);
 
 #endif //LAB_EDA_II_ESTRUCTURAS_Y_FUNCIONES_H

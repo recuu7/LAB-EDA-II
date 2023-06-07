@@ -20,9 +20,8 @@ User* leer_usuarios(FILE* f) {
     iniciar_usuario(usuario);
 
     int a = fscanf(f,"%s %d %s %s %s %s %s %s %s %s", usuario->nombre, &usuario->edad, usuario->email, usuario->ubicacion, usuario->gustos1, usuario->gustos2, usuario->gustos3, usuario->gustos4, usuario->gustos5, usuario->password);
-    if (a == 0) {
-        printf("%s",usuario->nombre);
-        return NULL;}
+    if (a == 0)
+        return NULL;
     else
         return usuario;
 }
@@ -32,7 +31,6 @@ void agregar_usuario_lista(User* usuario) {
 
     if (f == NULL)
         printf("No se ha encontrado el fichero!\n");
-    else {
+    else
         fprintf(f,"\n%s %d %s %s %s %s %s %s %s %s", usuario->nombre, usuario->edad, usuario->email, usuario->ubicacion, usuario->gustos1, usuario->gustos2, usuario->gustos3, usuario->gustos4, usuario->gustos5, usuario->password);
-    }
 }
