@@ -78,9 +78,6 @@ void poner_lista(Lista_usuarios* lista, User* usuario);
 void lista_todos_usuarios(Lista_usuarios* lista);
 User* buscar_usuario(char* nombre_a_buscar, Lista_usuarios* lista);
 User* elegir_usuario(Lista_usuarios* lista);
-void enviar_solicitud_a_usuario(Lista_usuarios* lista, User* usuario_solicitud);
-void iniciar_amistades(User* usuario);
-void iniciar_solicitudes(User* usuario);
 int login(User* usuario);
 User* leer_usuarios(FILE* f);
 void usuarios_fichero(Lista_usuarios* lista);
@@ -96,9 +93,6 @@ void edad_promedio();
 void agregar_amigo_amistades(Cola_usuarios* amigos, User* usuario);
 void menu_solicitudes_recibidas(User* usuario);
 void iniciar_cola_amistades(Cola_usuarios* amigos);
-
-
-
-
+void cola_amistades(Cola_usuarios* cola);
 
 #endif //LAB_EDA_II_ESTRUCTURAS_Y_FUNCIONES_H

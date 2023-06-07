@@ -69,12 +69,12 @@ void aceptar_solicitud_amistad(User* usuario) {
     if (amigo != NULL) {
         agregar_amigo_amistades(&usuario->amistades,amigo);
     }
-    printf("Solicitud de amistad aceptada a @%s!",amigo->nombre);
+    printf("Solicitud de amistad aceptada a @%s!\n",amigo->nombre);
 }
 
 void rechazar_solicitud_amistad(User* usuario) {
     User* amigo = eliminar_usuario_stack_solicitudes(&usuario->solicitudes);
-    printf("Solicitud de amistad rechada a @%s!",amigo->nombre);
+    printf("Solicitud de amistad rechada a @%s\n!",amigo->nombre);
 }
 
 User* siguiente_solicitud(User* usuario){

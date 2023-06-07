@@ -21,12 +21,13 @@ void menu_usuario(Lista_usuarios* lista){
         printf("Password correcto!\n");
 
     int menu = 0;
-    while (menu != 5) {
+    while (menu != 6) {
         printf("\n1) Enviar solicitudes de amistad.\n");
         printf("2) Gestionar las solicitudes pendientes.\n");
         printf("3) Realizar una publicacion.\n");
         printf("4) Listar las publicaciones de @%s.\n", usuario->nombre);
-        printf("5) Volver al menu principal.\n");
+        printf("5) Listar todos los amigos de @%s.\n", usuario->nombre);
+        printf("6) Volver al menu principal.\n");
         scanf("%d", &menu);
 
         if (menu == 1)
@@ -37,7 +38,9 @@ void menu_usuario(Lista_usuarios* lista){
             escribir_publication(usuario);
         else if (menu == 4)
             mirar_publicaciones_usuario(usuario);
-        else if (menu == 5) return;
+        else if (menu == 5)
+            cola_amistades(&usuario->amistades);
+        else if (menu == 6) return;
         else
             printf("Respuesta invalida.\n\n");
     }

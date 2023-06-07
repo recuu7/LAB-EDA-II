@@ -30,3 +30,18 @@ User* buscar_usuario_amistades(Cola_usuarios* cola, const char* nombre) {
     }
     return NULL;
 }
+
+void cola_amistades(Cola_usuarios* cola) {
+    Node_cola* nodeCola = cola->primero;
+    if (nodeCola == NULL)
+        printf("No tienes ninguna amistad.\n\n");
+    else {
+        printf("Todas tus amistades son:\n");
+        while (nodeCola != NULL) {
+            printf("- %s.\n",nodeCola->usuario->nombre);
+            nodeCola = nodeCola->siguiente;
+        }
+        printf("\n");
+    }
+
+}
