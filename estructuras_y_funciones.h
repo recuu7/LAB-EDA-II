@@ -18,7 +18,7 @@ typedef struct {
     char gustos4[100];
     char gustos5[100];
     struct Stack_usuarios* solicitudes;
-    struct Lista_usuarios* amistades;
+    struct Cola_usuarios* amistades;
     struct Publicacion* timeline;
 } User;
 
@@ -35,8 +35,8 @@ typedef struct {
 } Lista_usuarios;
 
 typedef struct {
-    char* usuario;
-    char* usuario_recividor;
+    User* usuario;
+    User* usuario_recividor;
     struct Node_stack* siguiente;
 } Node_stack ;
 
@@ -55,10 +55,20 @@ typedef struct {
     int size;
 } Diccionario;
 
-typedef struct Publicacion {
+typedef struct {
     char content[MAX_PUBLICATION_LENGTH + 1];
     struct Publicacion* next;
 } Publicacion;
+
+typedef struct {
+    User* usuario;
+    struct Node_cola* siguiente;
+} Node_cola ;
+
+typedef struct {
+    Node_cola* primero;
+    Node_cola* ultimo;
+} Cola_usuarios ;
 
 void iniciar_lista(Lista_usuarios* lista);
 void iniciar_usuario(User* usuario);
@@ -83,8 +93,9 @@ int stack_vacio(Stack_usuarios* pila);
 Stack_usuarios* iniciar_pila(Stack_usuarios* pila);
 void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista);
 void edad_promedio();
-
-
+void agregar_amigo_amistades(Cola_usuarios* amigos, User* usuario);
+void menu_solicitudes_recibidas(User* usuario);
+void iniciar_cola_amistades(Cola_usuarios* amigos);
 
 
 

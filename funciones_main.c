@@ -18,6 +18,8 @@ void iniciar_usuario(User* usuario) {
     usuario->gustos3[0] = '0';
     usuario->gustos4[0] = '0';
     usuario->gustos5[0] = '0';
+    iniciar_pila(&usuario->solicitudes);
+    iniciar_cola_amistades(&usuario->amistades);
 }
 
 void pedir_datos(User* usuario){

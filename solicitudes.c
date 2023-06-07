@@ -10,7 +10,12 @@ int stack_vacio(Stack_usuarios* pila) {
     else return 2;
 }
 
-void actualizar_stack(char* usuario_que_envia, char* usuario_que_recibe, Stack_usuarios* pila) {
+User* primer_usuario_stack(Stack_usuarios* pila) {
+    if (stack_vacio(pila) == 1) return NULL;
+    else return pila->top->usuario;
+}
+
+void actualizar_stack(User* usuario_que_envia, User* usuario_que_recibe, Stack_usuarios* pila) {
     Node_stack* solicitud = (Node_stack*) malloc(sizeof(Node_stack));
     solicitud->usuario = usuario_que_envia;
     solicitud->usuario_recividor = usuario_que_recibe;
@@ -23,14 +28,25 @@ void enviar_solicitud(User* usuario_que_envia, User* usuario_que_recibe, Stack_u
     Node_stack* solicitud = pila->top;
 
     while (solicitud != NULL) {
-        if ((solicitud->usuario == usuario_que_envia->nombre) && (solicitud->usuario_recividor == usuario_que_recibe->nombre)) {
+        if ((solicitud->usuario->nombre == usuario_que_envia->nombre) && (solicitud->usuario_recividor->nombre == usuario_que_recibe->nombre)) {
             printf("Solicitud invalida!\n");
             return;
         }
         solicitud = solicitud->siguiente;
     }
-    actualizar_stack(usuario_que_envia->nombre,usuario_que_recibe->nombre,pila);
+    actualizar_stack(usuario_que_envia,usuario_que_recibe,pila);
     printf("Solicitud enviada correctamente a @%s.\n",usuario_que_recibe->nombre);
+}
+
+User* eliminar_usuario_stack_solicitudes(Stack_usuarios* pila) {
+    if (stack_vacio(pila) != 1) {
+        Node_stack* nodeStack = pila->top;
+        pila->top = nodeStack->siguiente;
+        User* usuario = nodeStack->usuario;
+        free(nodeStack);
+        return usuario;
+    }
+    return NULL;
 }
 
 void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista) {
@@ -48,12 +64,48 @@ void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista) {
     }
 }
 
-/* void menu_solicitudes_recibidas(User* usuario, Lista_usuarios* lista) {
+void aceptar_solicitud_amistad(User* usuario) {
+    User* amigo = eliminar_usuario_stack_solicitudes(&usuario->solicitudes);
+    if (amigo != NULL) {
+        agregar_amigo_amistades(&usuario->amistades,amigo);
+    }
+    printf("Solicitud de amistad aceptada a @%s!",amigo->nombre);
+}
+
+void rechazar_solicitud_amistad(User* usuario) {
+    User* amigo = eliminar_usuario_stack_solicitudes(&usuario->solicitudes);
+    printf("Solicitud de amistad rechada a @%s!",amigo->nombre);
+}
+
+User* siguiente_solicitud(User* usuario){
+    return (primer_usuario_stack(&usuario->solicitudes));
+}
+
+
+void menu_solicitudes_recibidas(User* usuario) {
     int a = stack_vacio(&usuario->solicitudes);
     if (a != 1) {
-        int i = 0;
-        while (stack_vacio(&usuario->solicitudes) != 1) {
-            printf("Tienes una solicitud de %s.",);
+        Stack_usuarios* pila = (Stack_usuarios *) &usuario->solicitudes;
+        Node_stack* nodeStack = pila->top;
+        while (nodeStack != NULL) {
+            printf("Tienes solicitudes pendientes.\n");
+
+            User* temporal = siguiente_solicitud(usuario);
+
+            int opcion = 0;
+            while (opcion == 0) {
+                printf("Solicitud de amistad de @%s.\n",temporal->nombre);
+                printf("\n1) Acepctar solicitud de amistad.\n2) Rechazar solicitud de amistad.\n");
+                scanf("%d", &opcion);
+                if (opcion == 1) {
+                    aceptar_solicitud_amistad(usuario);
+                }
+                else if (opcion == 2) {
+                    rechazar_solicitud_amistad(usuario);
+                }
+                else { printf("Respuesta invalida.\n"); }
+            }
+            nodeStack = nodeStack->siguiente;
         }
 
     }
@@ -61,4 +113,4 @@ void menu_solicitudes_enviar(User* usuario, Lista_usuarios* lista) {
         printf("No tienes ninguna solicitud de amistad.\n");
         return;
     }
-} */
+}

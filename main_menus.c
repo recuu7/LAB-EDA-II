@@ -31,7 +31,8 @@ void menu_usuario(Lista_usuarios* lista){
 
         if (menu == 1)
             menu_solicitudes_enviar(usuario,lista);
-        else if (menu == 2);
+        else if (menu == 2)
+            menu_solicitudes_recibidas(usuario);
         else if (menu == 3)
             escribir_publication(usuario);
         else if (menu == 4)
