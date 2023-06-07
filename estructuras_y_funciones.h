@@ -82,7 +82,6 @@ int login(User* usuario);
 User* leer_usuarios(FILE* f);
 void usuarios_fichero(Lista_usuarios* lista);
 void agregar_usuario_lista(User* usuario);
-void top_3_dictionary();
 void escribir_publication(User* user);
 void mirar_publicaciones_usuario(User* user);
 void enviar_solicitud(User* usuario_que_envia, User* usuario_que_recibe, Stack_usuarios* pila);
@@ -95,5 +94,9 @@ void menu_solicitudes_recibidas(User* usuario);
 void iniciar_cola_amistades(Cola_usuarios* amigos);
 void cola_amistades(Cola_usuarios* cola);
 User* buscar_usuario_amistades(Cola_usuarios* cola, const char* nombre);
+void top3_imprimir(Diccionario diccionario[]);
+void actualizar_valor(Diccionario diccionario[], char* key);
+void leer_diccionario(Diccionario diccionario[]);
+Diccionario* crear_diccionario(Diccionario diccionario[]);
 
 #endif //LAB_EDA_II_ESTRUCTURAS_Y_FUNCIONES_H

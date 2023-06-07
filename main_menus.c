@@ -57,8 +57,11 @@ void menu_usuarios_existentes(Lista_usuarios* lista) {
 
         if (menu == 1) // si menu = 1 realiza:
             lista_todos_usuarios(lista); // imprime por pantalla todos los usuarios registrados
-        else if (menu == 2) // si menu = 2 realiza:
-            top_3_dictionary(); // imprime por pantalla el top 3 de gustos mas comunes entre los usuarios registrados
+        else if (menu == 2) {// si menu = 2 realiza:
+            Diccionario diccionario;
+            leer_diccionario(&diccionario);
+            top3_imprimir(&diccionario);
+            } // imprime por pantalla el top 3 de gustos mas comunes entre los usuarios registrados
         else if (menu == 3) // si menu = 3 realiza:
             edad_promedio(); // imprime por pantalla la edad promedio de todos los usuarios registrados
         else if (menu == 4) return; // si menu = 4 vuelve al menu principal
@@ -95,7 +98,6 @@ void mostrar_menu(Lista_usuarios* lista){
 int main() {
     Lista_usuarios lista;
     iniciar_lista(&lista); // iniciamos la lista de los usuarios
-
     usuarios_fichero(&lista); // una vez iniciada, la llenamos con los usuarios registrados en el fichero users.txt
 
     mostrar_menu(&lista); // mostramos el menu por pantalla
