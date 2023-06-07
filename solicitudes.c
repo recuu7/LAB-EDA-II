@@ -95,13 +95,11 @@ void menu_solicitudes_recibidas(User* usuario) {
         Stack_usuarios* pila = (Stack_usuarios *) &usuario->solicitudes;
         Node_stack* nodeStack = pila->top;
         while (nodeStack != NULL) {
-            printf("Tienes solicitudes pendientes.\n");
-
             User* temporal = siguiente_solicitud(usuario);
 
             int opcion = 0;
             while (opcion == 0) {
-                printf("Solicitud de amistad de @%s.\n",temporal->nombre);
+                printf("\nSolicitud de amistad de @%s.\n",temporal->nombre);
                 printf("\n1) Acepctar solicitud de amistad.\n2) Rechazar solicitud de amistad.\n");
                 scanf("%d", &opcion);
                 if (opcion == 1) {

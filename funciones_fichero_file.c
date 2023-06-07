@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include "estructuras_y_funciones.h"
 
-void usuarios_fichero(Lista_usuarios* lista) {
-    FILE* f = fopen("users.txt","r");
+void usuarios_fichero(Lista_usuarios* lista) { // funcion para poner los usuarios leidos de users.txt
+    FILE* f = fopen("users.txt","r"); //
 
     if (f == NULL)
         printf("No se ha encontrado el fichero!\n");
