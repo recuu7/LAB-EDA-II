@@ -105,5 +105,5 @@ La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien e
 ### Leer datos de una fuente externa como un archivo de texto o CSV (No implica guardado de datos)
 ### Implementar las funcionalidades de lectura y guardado de datos (Información de los usuarios y sus contactos, y demás que se quiera añadir) desde un archivo externo (.txt o csv) 
 
-## Objetivos Extras:
+## Objetivos de Exploración:
 ### Funciones de control de usuarios (media de Edad, gustos).
