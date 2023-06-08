@@ -173,6 +173,8 @@ También podríamos agregar opciones para especificar el nombre del archivo y el
 Este es de los apartados que más trabajo nos ha costado (siendo 3/4 días el tiempo empleado en resolverlo) porque hemos tenido muchos problemas implemetandolo. Por ejemplo, teníamos las funciones correctamente programadas pero a causa de superar la cantidad máxima de memória permitida nos daba el siguiente error : exit code -1073740940. Esto lo solucionamos creando una memória dinámica que aumentara la capacidad de memória máxima a medida que avanzaba el problema.
 
 ### Ubicación del diccionario y de las funciones relacionadas
+La creación del diccionario se encuentra en el fichero *'estructuras_y_funciones.h'*, en las líneas 53-57.
+La función leer_gustos de la que hemos hablado anteriormente se encuentra en el fichero *'gustos_dictionary.c'* en las líneas 5-10.
 
 ### Todas las partes importantes de tu código deben estar comentadas (Funciones, ciclos, secciones de código con una funcionalidad definida, secciones con una lógica dificil de entender a simple vista, entre otros), una buena guía de cómo comentar código en C la puedes encontrar en https://learn.microsoft.com/es-es/cpp/c-language/c-comments?view=msvc-170 
 
