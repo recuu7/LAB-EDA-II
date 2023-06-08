@@ -95,7 +95,7 @@ void menu_solicitudes_recibidas(User* usuario);
 void iniciar_cola_amistades(Cola_usuarios* amigos);
 void cola_amistades(Cola_usuarios* cola);
 User* buscar_usuario_amistades(Cola_usuarios* cola, const char* nombre);
-void leer_diccionario(Diccionario diccionario[]);
-void crear_diccionario(Diccionario diccionario[]);
 void print_top3();
+void actualizar_gusto(Diccionario* diccionario, char* nuevoGusto);
+
 #endif //LAB_EDA_II_ESTRUCTURAS_Y_FUNCIONES_H
