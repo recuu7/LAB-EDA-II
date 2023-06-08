@@ -1,5 +1,5 @@
 # LAB EDA 2
-Creación de una red social : CREACIÓN DE UNA RED SOCIAL
+CREACIÓN DE UNA RED SOCIAL
 
 ## VIDEO DEL PROYECTO
 https://youtu.be/1cMZsFbgbe0
