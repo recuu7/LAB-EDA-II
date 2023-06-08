@@ -99,7 +99,7 @@ funciones_main.c (LISTA)
 solicitudes.c (PILA)
 amistades.c (COLA)
 
-#### Tiempo:
+#### Tiempo empleado
 Se ha tardado mucho en hacer este codigo no solo unas horas sino varios dias ya que se iban haciendo los objetivos a medida que los ibamos necesitando.
 
 ### Implementar funcionalmente uno de los algoritmos de ordenamiento que se verán a lo largo del curso (InsertionSort, BubbleSort, MergeSort o QuickSort).
@@ -130,6 +130,10 @@ El Bubble Sort tiene algunas limitaciones, como su rendimiento ineficiente para 
 Para mejorar el rendimiento,podríamos considerar implementar otros algoritmos de ordenamiento más eficientes, como el Quick Sort o Merge Sort, que tienen una complejidad de tiempo inferior a O(n^2) de promedio O8n log n).
 
 Si necesitaramos mantener el orden de los elementos con el mismo valor "count" y se diera el caso, podríamos agregar criterios adicionales para comparar los elementos, como ordenar alfabéticamente por el campo "gusto" en caso de empate.
+
+### Tiempo empleado
+
+### Ubicación del algoritmo
 
 ### Implementar o bien un Diccionario (Dictionary) o bien una tabla Hash (HashTable) funcionales.
 
@@ -163,6 +167,10 @@ El bucle while recorre todas las líneas del archivo una vez, por lo que tiene u
 
 Podríamos agregar validaciones y un manejo de errores robusto para garantizar que los datos leídos sean válidos y que el proceso de asignación de memoria sea exitoso.
 También podríamos agregar opciones para especificar el nombre del archivo y el formato de entrada, lo que nos permitiría una  mayor flexibilidad en la lectura de datos de diferentes archivos con diferentes formatos.
+
+### Tiempo empleado
+
+### Ubicación del diccionario y funciones relacionadas
 
 ### Todas las partes importantes de tu código deben estar comentadas (Funciones, ciclos, secciones de código con una funcionalidad definida, secciones con una lógica dificil de entender a simple vista, entre otros), una buena guía de cómo comentar código en C la puedes encontrar en https://learn.microsoft.com/es-es/cpp/c-language/c-comments?view=msvc-170 
 
