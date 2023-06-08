@@ -62,8 +62,8 @@ El algoritmo tiene una complejidad temporal de O(n), donde n es el número de el
 
 #### Limitaciones y posibles soluciones 
 La principal limitación de nuestro algoritmo de búsqueda es que al ser una búsqueda lineal es de los algoritmos de búsqueda más lentos y  que ejecuta un mayor número de veces que cualquier otro cuando nos encontramos en el peor de los casos, esto se puede ver reflejado en el tiempo de ejecución del mismo. Esta limitación se haría visible sobretodo en el caso de que tuviéramos que buscar un amigo en concreto dentro de un usuario con miles o incluso millones de amigos, que de momento no es el caso en nuestra red social. Para la creación de estas estrcuturas hemos tardado más o menos diez minutos por cada una, lo que suma un total de 20 minutos. El motivo de haber tardado este tiempo, es porque al principio teníamos muchas dudas sobre en que situaciones se tenían que usar punteros o simplemente variables. En cuanto a este algoritmo, no habría nada que mejorar, pero en cuanto a la red social en sí, sería más práctico sustituir nuestro algoritmo de búsqueda por uno del tipo BinarySearch por ejemplo, que reduciría el tiempo medio de búsqueda así como de el número de ejecuciones del algoritmo. 
-**Tiempo:** Alrededor de 30 min ya que el algoritmo linearSearch lo hemos usado en seminarios y es de los algoritmos mas sencillos de programar. También, como era de las primeras lineas de código tardamos un poco mas ya que aun no habiamos practicado tanto.
-**Ubicación del algoritmo:** La función se encuentra entre las líneas 23 y 31 del archivo *'amistades.c'*
+#### Tiempo: Alrededor de 30 min ya que el algoritmo linearSearch lo hemos usado en seminarios y es de los algoritmos mas sencillos de programar. También, como era de las primeras lineas de código tardamos un poco mas ya que aun no habiamos practicado tanto.
+#### Ubicación del algoritmo: La función se encuentra entre las líneas 23 y 31 del archivo *'amistades.c'*
 
 ### Implementar como mínimo una Lista (List), una Pila (Stack) y una Cola (Queue) funcionales como parte de alguna de las funcionalidades del proyecto.
 Hemos conseguido implementar satisfactoriamente tanto la Lista como la Pila y la Cola. Cada una hace una funcion diferente en nuestro codigo. 
@@ -74,7 +74,9 @@ La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien e
 #### Variables
 
 #### Porque hemos escogido este algoritmo?
+
 #### Complejidad del algoritmo
+
 #### Limitaciones y posibles soluciones
    
 
