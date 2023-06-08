@@ -57,9 +57,9 @@ void menu_usuarios_existentes(Lista_usuarios* lista) {
 
         if (menu == 1) // si menu = 1 realiza:
             lista_todos_usuarios(lista); // imprime por pantalla todos los usuarios registrados
-        else if (menu == 2) {// si menu = 2 realiza:
+        else if (menu == 2) { // si menu = 2 realiza:
             Diccionario diccionario;
-            leer_diccionario(&diccionario);
+            crear_diccionario(&diccionario);
             top3_imprimir(&diccionario);
             } // imprime por pantalla el top 3 de gustos mas comunes entre los usuarios registrados
         else if (menu == 3) // si menu = 3 realiza:

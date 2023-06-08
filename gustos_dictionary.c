@@ -1,10 +1,9 @@
 #include "estructuras_y_funciones.h"
 #include "string.h"
 
-Diccionario* crear_diccionario(Diccionario diccionario[]) {
+void crear_diccionario(Diccionario* diccionario) {
     diccionario->elemento = NULL;
     diccionario->size = 0;
-    return diccionario;
 }
 
 void actualizar_fichero(Diccionario diccionario[]) {
@@ -52,6 +51,7 @@ void bubbleSort(Diccionario diccionario[], int n) {
 }
 
 void top3_imprimir(Diccionario diccionario[]) {
+    leer_diccionario(diccionario);
     int j = 1;
     bubbleSort(diccionario,diccionario->size);
     printf("Los gustos mas comunes son:\n");

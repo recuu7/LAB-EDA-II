@@ -1,1 +1,15 @@
-futbol 1
+futbol 4
+familia 4
+dinero 5
+universidad 3
+fiesta 6
+ruleta 2
+musica 1
+atletismo 1
+amigos 2
+basket 2
+coche 3
+mujeres 1
+padrear 1
+ganar 3
+joyas 2

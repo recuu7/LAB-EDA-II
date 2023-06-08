@@ -97,6 +97,6 @@ User* buscar_usuario_amistades(Cola_usuarios* cola, const char* nombre);
 void top3_imprimir(Diccionario diccionario[]);
 void actualizar_valor(Diccionario diccionario[], char* key);
 void leer_diccionario(Diccionario diccionario[]);
-Diccionario* crear_diccionario(Diccionario diccionario[]);
+void crear_diccionario(Diccionario diccionario[]);
 
 #endif //LAB_EDA_II_ESTRUCTURAS_Y_FUNCIONES_H
