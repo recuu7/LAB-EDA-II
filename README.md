@@ -221,8 +221,3 @@ Durante lo largo del proyecto, a medida que hemos ido desarrollando el proyecto,
 
 ### Diseño del modelo de datos
 ![image](https://github.com/recuu7/LAB-EDA-II/assets/131852106/9a1859a9-2c02-4a6c-a407-71c6f475981d)
-
-
-### Descripción y procesamiento del conjunto de datos
-
-
