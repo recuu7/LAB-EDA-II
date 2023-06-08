@@ -75,6 +75,7 @@ La función se encuentra entre las líneas 23 y 31 del archivo *'amistades.c'*
 
 ### Implementar como mínimo una Lista (List), una Pila (Stack) y una Cola (Queue) funcionales como parte de alguna de las funcionalidades del proyecto.
 Hemos conseguido implementar satisfactoriamente tanto la Lista como la Pila y la Cola. Cada una hace una funcion diferente en nuestro codigo. 
+
 La **Lista** la hemos usado para la lista de usuarios ya que era la opción mas eficaz para ello debido a que es facil de recorrer y modificar. Para ello hemos creado dos estructuras dentro del fichero estructuras_y_funciones,h , llamadas Nod_Lista y Lista_Usuarios.
 
 La **Pila** la hemos usado para las solicitudes de amistad, en teoria en la guia esta salia que debia ser una cola pero nosotros hemos pensado que en muchas redes sociales que usamos hoy en dia, la primera solicitud que llega es la que se queda abajo y por lo tanto sale la ultima.
@@ -120,3 +121,13 @@ Hemos decidido implementar el algoritmo de búsqueda BubbleSort
 ### Funciones de control de usuarios (media de Edad, gustos).
 
 ## Solutions
+
+### Arquitectura del sistema
+
+### Gestión de errores
+
+### Diseño del modelo de datos
+
+### Descripción y procesamiento del conjunto de datos
+
+
