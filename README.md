@@ -76,19 +76,31 @@ Alrededor de 30 min ya que el algoritmo linearSearch lo hemos usado en seminario
 #### Ubicación del algoritmo:
 La función se encuentra entre las líneas 23 y 31 del archivo *'amistades.c'*
 
-### Implementar como mínimo una Lista (List), una Pila (Stack) y una Cola (Queue) funcionales como parte de alguna de las funcionalidades del proyecto.
+#### Implementar como mínimo una Lista (List), una Pila (Stack) y una Cola (Queue) funcionales como parte de alguna de las funcionalidades del proyecto.
 Hemos conseguido implementar satisfactoriamente tanto la Lista como la Pila y la Cola. Cada una hace una funcion diferente en nuestro codigo. 
 
 La **Lista** la hemos usado para la lista de usuarios ya que era la opción mas eficaz para ello debido a que es facil de recorrer y modificar. Para ello hemos creado dos estructuras dentro del fichero estructuras_y_funciones,h , llamadas Node_Lista y Lista_Usuarios.
-
-La **Pila** la hemos usado para las solicitudes de amistad, en teoria en la guia esta salia que debia ser una cola pero nosotros hemos pensado que en muchas redes sociales que usamos hoy en dia, la primera solicitud que llega es la que se queda abajo y por lo tanto sale la ultima.
-
-
+#
+La **Pila** la hemos usado para las solicitudes de amistad, en teoria en la guia esta salia que debia ser una cola pero nosotros hemos pensado que en muchas redes sociales que usamos hoy en dia, la primera solicitud que llega es la que se queda abajo y por lo tanto sale la ultima.# 
 La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien es facil de recorrer.
-### Variables
--Las variables para la lista hemos usado una struct la cual tiene el size y 2 variables las cuales son structs que pertenecen a una LINKED ARRAY, llamados primero y ultimo.
--Las variables para la Pila es otra struct en el cual hay el top que es una linked array para saber que esta en la cima de la pila, y tambien solicitudes.
--Las variables para la Cola hemos hecho una struct similar a la lista pero no habia un usuario previo.
+
+#### Variables
+* Las variables para la lista hemos usado una struct la cual tiene el size y 2 variables las cuales son structs que pertenecen a una LINKED ARRAY, llamados primero y ultimo.
+* Las variables para la Pila es otra struct en el cual hay el top que es una linked array para saber que esta en la cima de la pila, y tambien solicitudes.
+* Las variables para la Cola hemos hecho una struct similar a la lista pero no habia un usuario previo.
+
+#### Porque hemos escgido este algoritmo?
+Como hemos explicado antes cada una de los metodos de guardar datos y usarlos se ha utilizado acorde a la conveniencia de estos.
+
+#### Ubicacion del algoritmo: 
+estructuras_y_funciones.h 
+Y para las funciones que usan listas, colas y pilas:
+funciones_main.c (LISTA)
+solicitudes.c (PILA)
+amistades.c (COLA)
+
+#### Tiempo:
+Se ha tardado mucho en hacer este codigo no solo unas horas sino varios dias ya que se iban haciendo los objetivos a medida que los ibamos necesitando.
 
 ### Implementar funcionalmente uno de los algoritmos de ordenamiento que se verán a lo largo del curso (InsertionSort, BubbleSort, MergeSort o QuickSort).
 El algoritmo de búsqueda que hemos decidido implementar es el Bubble Sort, que hemos utilizado en nuestro caso para ordenar los gustos de los usuarios (de más a menos común) dentro de un diccionario. A continuación, explicaremos algunos aspectos en relación a la implementación del algoritmo.
