@@ -10,11 +10,11 @@ David Romero Garriga : 266572
 
 Saül Ruíz Cazáñez : 267887
 
-### FECHA DE ENTREGA:
+## FECHA DE ENTREGA:
 08-06-2023
 
-#### INFORME DEL PROYECTO:
-##### ÍNDICE:
+## INFORME DEL PROYECTO:
+####ÍNDICE:
 
 1. Introducción
 
@@ -45,11 +45,11 @@ Comenzamos informándonos en Internet sobre la principal temática que trataría
 
 El motivo por el cual creímos que era mejor crear una red social que engloba cualquier tema, es porque pensamos que era más útil para los usuarios, porque pensamos que de esta manera más gente la usaría. En este informe hablaremos primero  sobre cómo hemos trabajado en estas funcionalidades, sobre el planteamiento que hemos tenido de cada una, su desarrollo, problemas encontrados mientras trabajabamos en ellas y las soluciones encontradas. Después de explicar los objetivos cumplidos e intentados, mostraremos nuestro producto final, como hemos controlado los errores, el diseño final, dónde hemos implementado cada objetivo, etc. El informe concluye con la bibliografía, donde citaremos todas las páginas web y libros que nos han ayudado durante la práctica.
 
-# OBJETIVOS DEL PROYECTO
+## OBJETIVOS DEL PROYECTO
 
 ## OBJETIVOS OBLIGATORIOS
 
-### Implementar funcionalmente uno de los algoritmos de búsqueda que se verán dentro del curso (LinearSearch o BinarySearch) 
+## Implementar funcionalmente uno de los algoritmos de búsqueda que se verán dentro del curso (LinearSearch o BinarySearch) 
 Hemos decidido implementar funcionalmente el algoritmo de búsqueda Lineaearch ,que nos ha ayudado en el apartado de las listas de amigos, permitiéndonos buscar el nombre de algún amigo en concreto dentro de ellas. Este algoritmo de búsqueda lineal realiza una búsqueda secuencial en una lista de elementos comparando cada uno con el valor buscado hasta encontrar una coincidencia o hasta llegar al final de la cola. 
 
 #### Variables
@@ -76,65 +76,47 @@ La función se encuentra entre las líneas 23 y 31 del archivo *'amistades.c'*
 ### Implementar como mínimo una Lista (List), una Pila (Stack) y una Cola (Queue) funcionales como parte de alguna de las funcionalidades del proyecto.
 Hemos conseguido implementar satisfactoriamente tanto la Lista como la Pila y la Cola. Cada una hace una funcion diferente en nuestro codigo. 
 
-La **Lista** la hemos usado para la lista de usuarios ya que era la opción mas eficaz para ello debido a que es facil de recorrer y modificar. Para ello hemos creado dos estructuras dentro del fichero estructuras_y_funciones,h , llamadas Nod_Lista y Lista_Usuarios.
+La **Lista** la hemos usado para la lista de usuarios ya que era la opción mas eficaz para ello debido a que es facil de recorrer y modificar. Para ello hemos creado dos estructuras dentro del fichero estructuras_y_funciones,h , llamadas Node_Lista y Lista_Usuarios.
 
 La **Pila** la hemos usado para las solicitudes de amistad, en teoria en la guia esta salia que debia ser una cola pero nosotros hemos pensado que en muchas redes sociales que usamos hoy en dia, la primera solicitud que llega es la que se queda abajo y por lo tanto sale la ultima.
 
 
 La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien es facil de recorrer.
 
-#### Variables
-
-#### Porque hemos escogido este algoritmo?
-
-#### Complejidad del algoritmo
-
-#### Limitaciones y posibles soluciones
-   
 ### Implementar funcionalmente uno de los algoritmos de ordenamiento que se verán a lo largo del curso (InsertionSort, BubbleSort, MergeSort o QuickSort).
+El algoritmo de búsqueda que hemos decidido implementar es el Bubble Sort, que hemos utilizado en nuestro caso para ordenar los gustos de los usuarios (de más a menos común) dentro de un diccionario. A continuación, explicaremos algunos aspectos en relación a la implementación del algoritmo.
 
-El algoritmo de búsqueda implementado es el Bubble Sort, que se utiliza para ordenar un array de elementos en función de su atributo "count" de mayor a menor. A continuación, responderé tus preguntas en relación a la implementación del algoritmo.
-## ¿Qué variables se utilizaron y para qué propósito?
+#### Variables
 - La variable "diccionario" es un puntero a una estructura de tipo "Diccionario". Esta estructura contiene los siguientes campos:
-      · "elemento": es un puntero a una estructura de tipo "Elementos". Este              campo almacena los elementos del diccionario.
+      · "elemento": es un puntero a una estructura de tipo "Elementos". Este campo almacena los elementos del diccionario.
       · "size": indica el número actual de elementos en el diccionario.
       ·"capacity": indica la capacidad máxima del diccionario.
       
-##¿Qué estructuras de datos se eligieron para este objetivo? ¿Cuál es su uso esperado?
+#### ¿Qué estructuras de datos se eligieron para este objetivo? ¿Cuál es su uso esperado?
 -Se utilizaron dos estructuras de datos principales:
-      ·"Elementos": es una estructura que contiene dos campos, "count" de tipo          entero para almacenar la cantidad y "gusto" de tipo arreglo de            caracteres para almacenar la descripción del gusto.
-      ·"Diccionario": es una estructura que contiene tres campos, "elemento" que es un puntero a una matriz de elementos, "size" que indica el número actual de elementos en el diccionario y "capacity" que indica la capacidad máxima del diccionario. Esta estructura se utiliza para almacenar y gestionar los elementos del diccionario.
+      ·"Elementos": es una estructura que contiene dos campos, "count" de tipo entero, para almacenar la cantidad y "gusto" de tipo array       para almacenar la descripción del gusto.
+      ·"Diccionario": es una estructura que contiene tres campos, "elemento" que es un puntero a una matriz de elementos, "size" que            indica el número actual de elementos en el diccionario y "capacity" que indica la capacidad máxima del diccionario. Esta                  estructura se utiliza para almacenar y gestionar los elementos del diccionario.
       
-##¿Qué algoritmo se eligió para este objetivo? ¿Cuál es su comportamiento esperado? ¿Y su rendimiento en Big O?
+#### ¿Qué algoritmo se eligió para este objetivo? ¿Cuál es su comportamiento esperado? ¿Y su rendimiento en Big O?
+El algoritmo elegido es el Bubble Sort. Este algoritmo funciona comparando elementos adyacentes y realizando intercambios si están en el orden incorrecto. El proceso se repite hasta que el array esté completamente ordenado.
 
-· El algoritmo elegido es el Bubble Sort. Este algoritmo funciona comparando elementos adyacentes y realizando intercambios si están en el orden incorrecto. El proceso se repite hasta que el array esté completamente ordenado.
+El comportamiento esperado del Bubble Sort es ordenar los elementos del diccionario de acuerdo a su atributo "count" (las veces que aparece cada gusto) de mayor a menor.
 
-· El comportamiento esperado del Bubble Sort es ordenar los elementos del diccionario de acuerdo a su atributo "count" de mayor a menor.
 En cuanto a su rendimiento en Big O, el Bubble Sort tiene una complejidad de O(n^2), donde "n" es el número de elementos en el diccionario. Esto significa que su rendimiento empeora significativamente a medida que el tamaño del diccionario aumenta.
-· ¿Qué limitaciones tiene el algoritmo? ¿Y su implementación?
-- El Bubble Sort tiene algunas limitaciones, como su rendimiento ineficiente para grandes conjuntos de datos debido a su complejidad de tiempo cuadrático.
 
-- La implementación actual del algoritmo no considera la posibilidad de elementos duplicados en el diccionario. Si dos elementos tienen el mismo valor "count", el algoritmo no garantiza un orden específico para esos elementos.
+#### ¿Qué limitaciones tiene el algoritmo? ¿Y su implementación?
+El Bubble Sort tiene algunas limitaciones, como su rendimiento ineficiente para grandes conjuntos de datos debido a su complejidad de tiempo cuadrática. A simple vista, puede parecer un error que en la implementación actual del algoritmo no se considera la posibilidad de elementos duplicados en el diccionario. Si dos elementos tienen el mismo valor "count", el algoritmo no garantiza un orden específico para esos elementos. No obstante esto no puede suceder ya que el algoritmo lee solamente ficheros de texto, en los que no hay elementos repetidos.
 
-· ¿Qué se puede mejorar?
-- Para mejorar el rendimiento, se pueden considerar otros algoritmos de ordenamiento más eficientes, como el Quick Sort o Merge Sort, que tienen una complejidad de tiempo inferior a O(n^2) en promedio.
+#### ¿Qué se puede mejorar?
+Para mejorar el rendimiento,podríamos considerar implementar otros algoritmos de ordenamiento más eficientes, como el Quick Sort o Merge Sort, que tienen una complejidad de tiempo inferior a O(n^2) de promedio O8n log n).
 
-- Si se necesita mantener el orden de los elementos con el mismo valor "count", se pueden agregar criterios adicionales para comparar los elementos, como ordenar alfabéticamente por el campo "gusto" en caso de empate.
-En resumen, el algoritmo Bubble Sort implementado utiliza las estructuras de datos "Elementos" y "Diccionario" para almacenar y ordenar los elementos según su atributo "count". Sin embargo, debido a su rendimiento ineficiente en grandes conjuntos de datos, se podrían considerar mejoras utilizando algoritmos de ordenamiento más eficientes.
-
-#### Variables
-
-#### Porque hemos escogido este algoritmo?
-
-#### Complejidad del algoritmo
-
-#### Limitaciones y posibles soluciones
+Si necesitaramos mantener el orden de los elementos con el mismo valor "count" y se diera el caso, podríamos agregar criterios adicionales para comparar los elementos, como ordenar alfabéticamente por el campo "gusto" en caso de empate.
 
 ### Implementar o bien un Diccionario (Dictionary) o bien una tabla Hash (HashTable) funcionales.
 
-La función leer_gustos implementa la lectura de datos desde un archivo de texto llamado "dictionary.txt" y los almacena en una estructura de datos llamada Diccionario. A continuación, proporcionaré una descripción de las características principales de la implementación:
+La función leer_gustos implementa la lectura de datos desde un archivo de texto llamado "dictionary.txt" y los almacena en una estructura de datos llamada Diccionario. A continuación, proporcionamos una descripción de las características principales de la implementación:
 
-· Variables utilizadas y su propósito:
+#### Variables utilizadas y su propósito:
 
 - f: Un puntero a un archivo que se utiliza para abrir el archivo "dictionary.txt".
 - buffer: Un arreglo de caracteres utilizado como un buffer temporal para almacenar cada línea leída del archivo.
@@ -143,34 +125,27 @@ La función leer_gustos implementa la lectura de datos desde un archivo de texto
 elemento: Una variable de tipo Elementos que representa un elemento del diccionario, con campos count y gusto para almacenar los valores correspondientes.
 - diccionario: Una estructura de datos de tipo Diccionario que contiene un arreglo dinámico de elementos y mantiene el tamaño y la capacidad actual del diccionario.
 
-·Estructuras de datos utilizadas:
+#### Estructuras de datos utilizadas:
 
 - Elementos: Una estructura que representa un elemento del diccionario, con dos campos: count de tipo entero y gusto de tipo cadena (arreglo de caracteres). Los elementos se almacenan en un arreglo dinámico dentro de la estructura Diccionario.
 - Diccionario: Una estructura que mantiene un arreglo dinámico de elementos (elemento), así como el tamaño actual (size) y la capacidad total (capacity) del diccionario.
 
-· Algoritmo elegido y comportamiento esperado:
+#### Algoritmo elegido y comportamiento esperado:
 
-El algoritmo utilizado en esta función es un proceso de lectura e interpretación de líneas de un archivo de texto.
-Se utiliza un bucle while junto con la función fgets para leer cada línea del archivo y almacenarla en el buffer buffer.
-Luego, se utiliza la función sscanf para extraer los valores de gusto y count desde el buffer. A continuación, se crea una nueva instancia de Elementos, se asignan los valores leídos a los campos correspondientes y se agrega al arreglo de elementos del diccionario. Si el tamaño actual del diccionario alcanza su capacidad, se duplica la capacidad del diccionario utilizando realloc para asignar más memoria.
+El algoritmo que hemos utilizado en esta función es un proceso de lectura e interpretación de líneas, encontradas en un archivo de texto.
+Hemos utilizado un bucle while junto con la función fgets para leer cada línea del archivo y almacenarla en el buffer.
+Luego, usamos la función sscanf para extraer los valores de gusto y count desde el buffer. A continuación, se crea una nueva instancia de Elementos, se asignan los valores leídos a los campos correspondientes y se agrega al arreglo de elementos del diccionario. Si el tamaño actual del diccionario alcanza su capacidad máxima, se duplica la capacidad del diccionario utilizando realloc para asignar más memoria.
 Después de leer todas las líneas del archivo, se cierra el archivo.
 
-· Desempeño en Big O:
-
+#### Desempeño en Big O:
 El bucle while recorre todas las líneas del archivo una vez, por lo que tiene una complejidad de O(N), donde N es el número de líneas en el archivo.
 
-· Posibles mejoras:
+#### Posibles mejoras:
 
-Agregar validaciones y manejo de errores robusto para garantizar que los datos leídos sean válidos y que el proceso de asignación de memoria sea exitoso.
-Proporcionar opciones para especificar el nombre del archivo y el formato de entrada, lo que permitiría mayor flexibilidad en la lectura de datos de diferentes archivos con diferentes formatos.
+Podríamos agregar validaciones y un manejo de errores robusto para garantizar que los datos leídos sean válidos y que el proceso de asignación de memoria sea exitoso.
+También podríamos agregar opciones para especificar el nombre del archivo y el formato de entrada, lo que nos permitiría una  mayor flexibilidad en la lectura de datos de diferentes archivos con diferentes formatos.
 
-#### Variables
 
-#### Porque hemos escogido este algoritmo?
-
-#### Complejidad del algoritmo
-
-#### Limitaciones y posibles soluciones
 
 ## Objetivos Deseables:
 ### Leer datos de una fuente externa como un archivo de texto o CSV (No implica guardado de datos)
