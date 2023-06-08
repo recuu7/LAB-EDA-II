@@ -8,7 +8,7 @@ Sergi Recuero Fonquerna : 269094
 
 David Romero Garriga : 266572
 
-Saül Ruíz Cazáñez :
+Saül Ruíz Cazáñez : 267887
 
 ### FECHA DE ENTREGA:
 08-06-2023
