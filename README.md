@@ -17,7 +17,7 @@ Saül Ruíz Cazáñez : 267887
 08-06-2023
 
 ## INFORME DEL PROYECTO:
-####ÍNDICE:
+#### ÍNDICE:
 
 1. Introducción
 
@@ -56,7 +56,7 @@ El motivo por el cual creímos que era mejor crear una red social que engloba cu
 Hemos decidido implementar funcionalmente el algoritmo de búsqueda Lineaearch ,que nos ha ayudado en el apartado de las listas de amigos, permitiéndonos buscar el nombre de algún amigo en concreto dentro de ellas. Este algoritmo de búsqueda lineal realiza una búsqueda secuencial en una lista de elementos comparando cada uno con el valor buscado hasta encontrar una coincidencia o hasta llegar al final de la cola. 
 
 #### Variables
-Las variables que hemos utilizado en este algoritmo son “cola_usuarios” y “nombre”. Las dos variables tienen un puntero delante por lo que significa que apuntan a una estructura de datos. En el caso de la primera, apuntan a una estructura llamada Cola, la cual se muestra a continuación: P O N ER L A I M A G E N. Como podemos observar, esta estructura llamada “Cola”, contiene 3 variables. En primer lugar la variable “size” la cual es un entero y que nos servirá para definir el tamaño de la array que utilizamos. En segundo lugar, vemos que tanto la segunda variable como la tercera tienen punteros a delante por lo que también sabemos que apuntan a otra estructura de datos. Estas dos últimas variables, básicamente sirven para saber identificar el primer y el último elemento de la cola, para así poder operar fácilmente con ellas. A continuación muestro la estructura de datos a a la cual apuntan las dos últimas variables de la estructura llamada “Cola”. P O N E R I M A G E N 
+Las variables que hemos utilizado en este algoritmo son “cola_usuarios” y “nombre”. Las dos variables tienen un puntero delante por lo que significa que apuntan a una estructura de datos. En el caso de la primera, apuntan a una estructura llamada Cola. Como podemos observar en nuestras líneas de código , esta estructura llamada “Cola”, contiene 3 variables. En primer lugar la variable “size” la cual es un entero y que nos servirá para definir el tamaño de la array que utilizamos. En segundo lugar, vemos que tanto la segunda variable como la tercera tienen punteros a delante por lo que también sabemos que apuntan a otra estructura de datos. Estas dos últimas variables apuntan a la estructura de datos llamada Node_Cola y básicamente sirven parapoder identificar el primer y el último elemento de la cola, para así poder operar fácilmente con ellas. 
 
 #### Porque hemos escogido este algoritmo?
 Hemos escogido este algoritmo de búsqueda porque creemos que es el más sencillo para aplicar a una lista y a una cola. 
@@ -148,6 +148,13 @@ El bucle while recorre todas las líneas del archivo una vez, por lo que tiene u
 Podríamos agregar validaciones y un manejo de errores robusto para garantizar que los datos leídos sean válidos y que el proceso de asignación de memoria sea exitoso.
 También podríamos agregar opciones para especificar el nombre del archivo y el formato de entrada, lo que nos permitiría una  mayor flexibilidad en la lectura de datos de diferentes archivos con diferentes formatos.
 
+### Todas las partes importantes de tu código deben estar comentadas (Funciones, ciclos, secciones de código con una funcionalidad definida, secciones con una lógica dificil de entender a simple vista, entre otros), una buena guía de cómo comentar código en C la puedes encontrar en https://learn.microsoft.com/es-es/cpp/c-language/c-comments?view=msvc-170 
+
+Hemos comentado todas las partes importantes o que podrían llegar a ser confusas de nuestro código, además de comentarlas en este mismo informe.
+
+### Usar github para que todos los miembros del equipo puedan trabajar a la par y más cómodamente. Los diferentes miembros del equipo deben mostrar actualizaciones del código constantes.
+
+Hemos hecho uso de github el primer día de prácitca, en el que nos leímos su respectiva guía del colgada en el AulaGlobal. Nos ha sido muy útil a al hora de compenetrarnos como grupo, pudiendo trabajar a la vez o por separado sin ningún tipo de problema al respecto, para completar los objetivos establecidos pro las entregas de la práctica y por los mismos miembros del grupo. 
 
 
 ## Objetivos Deseables:
@@ -164,7 +171,7 @@ También podríamos agregar opciones para especificar el nombre del archivo y el
 ### Arquitectura del sistema
 
 ### Gestión de errores
-Durante lo largo del proyectp, a medida que hemos ido desarrollando el proyecto, nos han aparecido muchos errores en todos lados y que nos ha costado mucho tiempo el saber corregirlos para que por fin compilase y para que estos desaparecieran. Básicamente cuando un miembro del grupo tenia dudas sobre como resolver cualquier error, lo que hemos ido haciendo, primero de todo ponerlo en común con todos los miembros del grupo para saber si lo podiamos resolver entre nosotros sin la necesidad de preguntar a alguien externo a nuestro grupo. Si nadie lo sabia resolver, lo que haciamos es buscar información a través de internet en varias páginas como por ejemplo usando la inteligencia artificial de CHAT GPT, ya que nos ayudaba mucho para sobretodo tener saber el como y el porque lo solucionava de dicha manera. Sin embargo, tamboén hemos recurrido a vídeos ya sea en youtube o en otras plataformas. en el caso del chat gpt, cuando nos resolvia el error que le proporcionabamos para que nos lo corrijiera, lo primero que hacíamos era comprovarlo en el CLion para saber si realmente estaba bién resuelto y corregido. Si no estaba bien corregido, lo que haciamos era intentar compararlo con gente de otro grupo para ver en que nos podiamos estar equivocando o confundiendo.
+Durante lo largo del proyecto, a medida que hemos ido desarrollando el proyecto, nos han aparecido muchos errores en todos lados y que nos ha costado mucho tiempo el saber corregirlos para que por fin compilase y para que estos desaparecieran. Básicamente cuando un miembro del grupo tenia dudas sobre como resolver cualquier error, lo que hemos ido haciendo, primero de todo ponerlo en común con todos los miembros del grupo para saber si lo podiamos resolver entre nosotros sin la necesidad de preguntar a alguien externo a nuestro grupo. Si nadie lo sabia resolver, lo que haciamos es buscar información a través de internet en varias páginas como por ejemplo usando la inteligencia artificial de CHAT GPT, ya que nos ayudaba mucho para sobretodo tener saber el como y el porque lo solucionava de dicha manera. Sin embargo, tamboén hemos recurrido a vídeos ya sea en youtube o en otras plataformas. en el caso del chat gpt, cuando nos resolvia el error que le proporcionabamos para que nos lo corrijiera, lo primero que hacíamos era comprovarlo en el CLion para saber si realmente estaba bién resuelto y corregido. Si no estaba bien corregido, lo que haciamos era intentar compararlo con gente de otro grupo para ver en que nos podiamos estar equivocando o confundiendo.
 
 ### Diseño del modelo de datos
 
