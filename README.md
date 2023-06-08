@@ -193,6 +193,8 @@ Hemos hecho uso de github el primer día de prácitca, en el que nos leímos su 
 
 ## Objetivos de Exploración:
 ### Funciones de control de usuarios (media de Edad, gustos).
+De manera voluntaria hemos creado una funcion que dados todos los usuarios retornava la edad mediana.
+También hemos hecho una funcion que imprime por pantalla el top 3 de los gustos más comunes entre los usuarios registrados.
 
 ## Solutions
 
@@ -212,7 +214,6 @@ nombres, gustos, etc..., por pantalla y también donde se nos muestran los disti
 es la que pide los datos que luego serán almacenados en la base de datos y estructuras.
 
 ![image](https://github.com/recuu7/LAB-EDA-II/assets/131852106/255097ce-b057-436f-94e7-b8d606416562)
-
 
 
 ### Gestión de errores
