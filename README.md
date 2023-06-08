@@ -170,27 +170,8 @@ Hemos hecho uso de github el primer día de prácitca, en el que nos leímos su 
 
 ### Arquitectura del sistema
 Los bloques principales se nuestro sistema
-   +-------------------------+
-   |     Aplicación Web      |
-   +-------------------------+
-               |
-               | Solicitudes/Respuestas
-               |
-   +-------------------------+
-   |   Servidor de Aplic.    |
-   +-------------------------+
-               |
-               | Consultas/Actualizaciones
-               |
-   +-------------------------+
-   |     Base de Datos       |
-   +-------------------------+
-               |
-               | Almacenamiento/Recuperación
-               |
-   +-------------------------+
-   |       Usuario (UI)      |
-   +-------------------------+
+![image](https://github.com/recuu7/LAB-EDA-II/assets/131852106/255097ce-b057-436f-94e7-b8d606416562)
+
 
 
 ### Gestión de errores
