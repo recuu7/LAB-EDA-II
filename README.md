@@ -71,7 +71,7 @@ El algoritmo tiene una complejidad temporal de O(n), donde n es el número de el
 La principal limitación de nuestro algoritmo de búsqueda es que al ser una búsqueda lineal es de los algoritmos de búsqueda más lentos y  que ejecuta un mayor número de veces que cualquier otro cuando nos encontramos en el peor de los casos, esto se puede ver reflejado en el tiempo de ejecución del mismo. Esta limitación se haría visible sobretodo en el caso de que tuviéramos que buscar un amigo en concreto dentro de un usuario con miles o incluso millones de amigos, que de momento no es el caso en nuestra red social. Para la creación de estas estrcuturas hemos tardado más o menos diez minutos por cada una, lo que suma un total de 20 minutos. El motivo de haber tardado este tiempo, es porque al principio teníamos muchas dudas sobre en que situaciones se tenían que usar punteros o simplemente variables. En cuanto a este algoritmo, no habría nada que mejorar, pero en cuanto a la red social en sí, sería más práctico sustituir nuestro algoritmo de búsqueda por uno del tipo BinarySearch por ejemplo, que reduciría el tiempo medio de búsqueda así como de el número de ejecuciones del algoritmo. 
 
 #### Tiempo:
-Alrededor de 30 min ya que el algoritmo linearSearch lo hemos usado en seminarios y es de los algoritmos mas sencillos de programar. También, como era de las primeras lineas de código tardamos un poco mas ya que aun no habiamos practicado tanto.
+Alrededor de 30 min ya que el algoritmo linearSearch lo hemos usado en seminarios y es de los algoritmos mas sencillos de programar. También, como era de las primeras lineas de código tardamos un poco mas ya que aún no habiamos practicado tanto y no teníamos mucho rodaje.
 
 #### Ubicación del algoritmo:
 La función se encuentra entre las líneas 23 y 31 del archivo *'amistades.c'*
@@ -100,7 +100,7 @@ solicitudes.c (PILA)
 amistades.c (COLA)
 
 #### Tiempo empleado
-Se ha tardado mucho en hacer este codigo no solo unas horas sino varios dias ya que se iban haciendo los objetivos a medida que los ibamos necesitando.
+Se ha tardado mucho en hacer este código, no solo unas horas sino varios días, ya que se iban haciendo los objetivos a medida que los ibamos necesitando.
 
 ### Implementar funcionalmente uno de los algoritmos de ordenamiento que se verán a lo largo del curso (InsertionSort, BubbleSort, MergeSort o QuickSort).
 El algoritmo de búsqueda que hemos decidido implementar es el Bubble Sort, que hemos utilizado en nuestro caso para ordenar los gustos de los usuarios (de más a menos común) dentro de un diccionario. A continuación, explicaremos algunos aspectos en relación a la implementación del algoritmo.
@@ -132,9 +132,10 @@ Para mejorar el rendimiento,podríamos considerar implementar otros algoritmos d
 Si necesitaramos mantener el orden de los elementos con el mismo valor "count" y se diera el caso, podríamos agregar criterios adicionales para comparar los elementos, como ordenar alfabéticamente por el campo "gusto" en caso de empate.
 
 ### Tiempo empleado
+Implementar este algoritmo nos ha llevado alrededor de 15 minutos debido a que. como el LinearSearch, lo habíamos trabajado en clase previamente, ya fuera en EDA I o en EDA II.
 
 ### Ubicación del algoritmo
-
+Se encuentra en el archivo *'gustos_dictionary.c'*entre las líneas 34 y 45.
 ### Implementar o bien un Diccionario (Dictionary) o bien una tabla Hash (HashTable) funcionales.
 
 La función leer_gustos implementa la lectura de datos desde un archivo de texto llamado "dictionary.txt" y los almacena en una estructura de datos llamada Diccionario. A continuación, proporcionamos una descripción de las características principales de la implementación:
