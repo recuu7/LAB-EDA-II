@@ -53,6 +53,7 @@ typedef struct {
 typedef struct {
     Elementos* elemento;
     int size;
+    int capacity;
 } Diccionario;
 
 typedef struct {

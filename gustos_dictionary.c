@@ -13,14 +13,20 @@ void leer_gustos(Diccionario* diccionario) {
     while (fgets(buffer, sizeof(buffer), f) != NULL) {
         char gusto[100];
         int count;
-        sscanf(buffer, "%s %d", gusto, &count);
+        if (sscanf(buffer, "%99s %d", gusto, &count) == 2) {
+            Elementos elemento;
+            elemento.count = count;
+            strncpy(elemento.gusto, gusto, sizeof(elemento.gusto) - 1);
+            elemento.gusto[sizeof(elemento.gusto) - 1] = '\0';
 
-        Elementos elemento;
-        elemento.count = count;
-        strncpy(elemento.gusto, gusto, sizeof(elemento.gusto));
+            if (diccionario->size == diccionario->capacity) {
+                diccionario->capacity *= 2;
+                diccionario->elemento = realloc(diccionario->elemento, diccionario->capacity * sizeof(Elementos));
+            }
 
-        diccionario->elemento[diccionario->size] = elemento;
-        diccionario->size++;
+            diccionario->elemento[diccionario->size] = elemento;
+            diccionario->size++;
+        }
     }
 
     fclose(f);
@@ -53,12 +59,12 @@ void actualizar_gusto(Diccionario* diccionario, char* nuevoGusto) {
 }
 
 void bubbleSort(Diccionario* diccionario) {
-    for (int i = 0; i < diccionario->size-1; i++) {
-        for (int j = 0; j < diccionario->size-i-1; j++) {
-            if (diccionario[j].elemento->count < diccionario[j+1].elemento->count) {
-                Diccionario temporal = diccionario[j];
-                diccionario[j] = diccionario[j+1];
-                diccionario[j+1] = temporal;
+    for (int i = 0; i < diccionario->size - 1; i++) {
+        for (int j = 0; j < diccionario->size - i - 1; j++) {
+            if (diccionario->elemento[j].count < diccionario->elemento[j + 1].count) {
+                Elementos temporal = diccionario->elemento[j];
+                diccionario->elemento[j] = diccionario->elemento[j + 1];
+                diccionario->elemento[j + 1] = temporal;
             }
         }
     }
@@ -66,20 +72,22 @@ void bubbleSort(Diccionario* diccionario) {
 
 void print_gustos(Diccionario* diccionario) {
     printf("Top 3 gustos mas repetidos:\n");
-    int j = 1;
     for (int i = 0; i < 3 && i < diccionario->size; i++) {
-        printf("%d. %s - %d veces\n", j, diccionario->elemento[i].gusto, diccionario->elemento[i].count);
+        printf("%d. %s - %d veces\n", i + 1, diccionario->elemento[i].gusto, diccionario->elemento[i].count);
     }
 }
 
 void print_top3(){
     Diccionario diccionario;
-    diccionario.elemento = (Elementos*) malloc(sizeof(Elementos));
     diccionario.size = 0;
+    diccionario.capacity = 10;
+    diccionario.elemento = malloc(diccionario.capacity * sizeof(Elementos));
 
     leer_gustos(&diccionario);
     bubbleSort(&diccionario);
     print_gustos(&diccionario);
 
     free(diccionario.elemento);
+
+
 }
