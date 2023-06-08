@@ -185,7 +185,19 @@ Hemos hecho uso de github el primer día de prácitca, en el que nos leímos su 
 ## Solutions
 
 ### Arquitectura del sistema
-Los bloques principales se nuestro sistema
+Los bloques principales se nuestro sistema son los siguientes:
+- Aplicacion: contiene la lógica y funcionalidad de la aplicación. Aquí se lleva a cabo el procesamiento de datos y
+la gestión de la interacción entre la base de datos y la interfaz de usuario.
+- Servidor: para este proyecto no se consideraria un bloque principal, pero si fuera una red social online necesitariamos
+tener un servidor para que esta pudiera funcionar para varios o muchos usuarios a la vez desde diferentes dispositivos.
+El servidor coge los datos de la base para hacer que la red funcione.
+- Base de datos y estructuras: son vitales para la red social porque sino cada vez que ejecutaramos la aplicacion
+empezariamos desde 0. En nuestro caso hemos usado las funciones de lectura y escritura de ficheros ".txt" de manera
+que cada vez que querramos entrar en la red social la lista de usuarios registrados ya se mantenga firme siempre
+al igual que los gustos más comunes entre los usuarios, y esto gracias al proceso de recuperación de datos.
+- Interfaz de usuario: es a través de donde interactuamos con la red social, donde pedimos todos los valores,
+nombres, gustos, etc..., por pantalla y también donde se nos muestran los distintos menús e interfaces. La interfaz
+es la que pide los datos que luego serán almacenados en la base de datos y estructuras.
 
 ![image](https://github.com/recuu7/LAB-EDA-II/assets/131852106/255097ce-b057-436f-94e7-b8d606416562)
 
