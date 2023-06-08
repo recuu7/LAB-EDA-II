@@ -1,6 +1,9 @@
 # ESTRUCTURA DE DATOS Y ALGORITMOS 2
 Creación de una red social : CREACIÓN DE UNA RED SOCIAL
 
+## VIDEO DEL PROYECTO
+https://youtu.be/1cMZsFbgbe0
+
 ## NOMBRE Y NIA DE LOS ESTUDIANTES:
 Sergi Paños Garnica: 267895 
 
