@@ -94,6 +94,16 @@ La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien e
 ### Implementar funcionalmente uno de los algoritmos de ordenamiento que se verán a lo largo del curso (InsertionSort, BubbleSort, MergeSort o QuickSort).
 
 Hemos decidido implementar el algoritmo de búsqueda BubbleSort
+Este algoritmo recorre un arreglo de elementos y compara pares de elementos adyacentes, intercambiándolos si están en el orden incorrecto. La pasada a través del arreglo se repite varias veces hasta que el arreglo esté completamente ordenado. La función bubbleSort recibe como parámetro un puntero a una estructura de datos llamada Diccionario, que contiene un arreglo de elementos a ordenar. El tamaño del arreglo se almacena en el campo size de la estructura Diccionario. 
+El algoritmo de Bubble Sort se implementa con dos bucles anidados. El bucle externo controla el número de pasadas a través del arreglo, y el bucle interno realiza las comparaciones e intercambios necesarios. En cada iteración del bucle externo, el bucle interno compara el elemento actual con su siguiente. Si el elemento actual es mayor que el siguiente, se intercambian de lugar. 
+
+El proceso continúa hasta que se hayan realizado todas las comparaciones necesarias en todas las pasadas a través del arreglo. Como resultado, los elementos más grandes "burbujean" hacia el final del arreglo, mientras que los elementos más pequeños se desplazan hacia el principio.
+
+
+
+
+
+
 
 #### Variables
 
