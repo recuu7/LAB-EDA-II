@@ -1,8 +1,8 @@
 # ESTRUCTURA DE DATOS Y ALGORITMOS 2
-Creación de una red social : (NOMBRE)
+Creación de una red social : CREACIÓN DE UNA RED SOCIAL
 
 ## NOMBRE Y NIA DE LOS ESTUDIANTES:
-Sergi Paños ---- : 
+Sergi Paños: 267895 
 
 Sergi Recuero Fonquerna : 269094
 
