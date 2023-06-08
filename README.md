@@ -187,6 +187,19 @@ Hemos hecho uso de github el primer día de prácitca, en el que nos leímos su 
 
 ## Objetivos Deseables:
 ### Leer datos de una fuente externa como un archivo de texto o CSV (No implica guardado de datos)
+Para leer de un file nosotros hemos hecho la funcion leer_usuario. La cual usamos la funcion implementada de fscanf. 
+
+#### Variables
+Usamos las variables de cada usuario para que en el fscanf se copien a edad, email...
+
+#### Funcionamento
+Con una funcion fscanf y inicando los usuarios usando un malloc podemos leer del file cada linea y configurar cada usuario.
+
+#### Tiempo empleado
+30 min ya que nosotros habiamos hecho seminarios similares en EDA I y por lo tanto sabiamos sobre el fscanf.
+
+#### Ubicacion el algoritmo
+funciones_fichero_file.c
 
 ### Implementar las funcionalidades de lectura y guardado de datos (Información de los usuarios y sus contactos, y demás que se quiera añadir) desde un archivo externo (.txt o csv) 
 
