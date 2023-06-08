@@ -115,6 +115,38 @@ El proceso continúa hasta que se hayan realizado todas las comparaciones necesa
 
 ### Implementar o bien un Diccionario (Dictionary) o bien una tabla Hash (HashTable) funcionales.
 
+La función leer_gustos implementa la lectura de datos desde un archivo de texto llamado "dictionary.txt" y los almacena en una estructura de datos llamada Diccionario. A continuación, proporcionaré una descripción de las características principales de la implementación:
+
+· Variables utilizadas y su propósito:
+
+- f: Un puntero a un archivo que se utiliza para abrir el archivo "dictionary.txt".
+- buffer: Un arreglo de caracteres utilizado como un buffer temporal para almacenar cada línea leída del archivo.
+- gusto: Una variable de tipo cadena (arreglo de caracteres) utilizada para almacenar el valor de gusto leído de cada línea del archivo.
+- count: Una variable de tipo entero utilizada para almacenar el valor de count leído de cada línea del archivo.
+elemento: Una variable de tipo Elementos que representa un elemento del diccionario, con campos count y gusto para almacenar los valores correspondientes.
+- diccionario: Una estructura de datos de tipo Diccionario que contiene un arreglo dinámico de elementos y mantiene el tamaño y la capacidad actual del diccionario.
+
+·Estructuras de datos utilizadas:
+
+- Elementos: Una estructura que representa un elemento del diccionario, con dos campos: count de tipo entero y gusto de tipo cadena (arreglo de caracteres). Los elementos se almacenan en un arreglo dinámico dentro de la estructura Diccionario.
+- Diccionario: Una estructura que mantiene un arreglo dinámico de elementos (elemento), así como el tamaño actual (size) y la capacidad total (capacity) del diccionario.
+
+· Algoritmo elegido y comportamiento esperado:
+
+El algoritmo utilizado en esta función es un proceso de lectura e interpretación de líneas de un archivo de texto.
+Se utiliza un bucle while junto con la función fgets para leer cada línea del archivo y almacenarla en el buffer buffer.
+Luego, se utiliza la función sscanf para extraer los valores de gusto y count desde el buffer. A continuación, se crea una nueva instancia de Elementos, se asignan los valores leídos a los campos correspondientes y se agrega al arreglo de elementos del diccionario. Si el tamaño actual del diccionario alcanza su capacidad, se duplica la capacidad del diccionario utilizando realloc para asignar más memoria.
+Después de leer todas las líneas del archivo, se cierra el archivo.
+
+· Desempeño en Big O:
+
+El bucle while recorre todas las líneas del archivo una vez, por lo que tiene una complejidad de O(N), donde N es el número de líneas en el archivo.
+
+· Posibles mejoras:
+
+Agregar validaciones y manejo de errores robusto para garantizar que los datos leídos sean válidos y que el proceso de asignación de memoria sea exitoso.
+Proporcionar opciones para especificar el nombre del archivo y el formato de entrada, lo que permitiría mayor flexibilidad en la lectura de datos de diferentes archivos con diferentes formatos.
+
 #### Variables
 
 #### Porque hemos escogido este algoritmo?
@@ -125,7 +157,9 @@ El proceso continúa hasta que se hayan realizado todas las comparaciones necesa
 
 ## Objetivos Deseables:
 ### Leer datos de una fuente externa como un archivo de texto o CSV (No implica guardado de datos)
+
 ### Implementar las funcionalidades de lectura y guardado de datos (Información de los usuarios y sus contactos, y demás que se quiera añadir) desde un archivo externo (.txt o csv) 
+
 
 ## Objetivos de Exploración:
 ### Funciones de control de usuarios (media de Edad, gustos).
