@@ -216,6 +216,8 @@ es la que pide los datos que luego serán almacenados en la base de datos y estr
 Durante lo largo del proyecto, a medida que hemos ido desarrollando el proyecto, nos han aparecido muchos errores en todos lados y que nos ha costado mucho tiempo el saber corregirlos para que por fin compilase y para que estos desaparecieran. Básicamente cuando un miembro del grupo tenia dudas sobre como resolver cualquier error, lo que hemos ido haciendo, primero de todo ponerlo en común con todos los miembros del grupo para saber si lo podiamos resolver entre nosotros sin la necesidad de preguntar a alguien externo a nuestro grupo. Si nadie lo sabia resolver, lo que haciamos es buscar información a través de internet en varias páginas como por ejemplo usando la inteligencia artificial de CHAT GPT, ya que nos ayudaba mucho para sobretodo tener saber el como y el porque lo solucionava de dicha manera. Sin embargo, tamboén hemos recurrido a vídeos ya sea en youtube o en otras plataformas. en el caso del chat gpt, cuando nos resolvia el error que le proporcionabamos para que nos lo corrijiera, lo primero que hacíamos era comprovarlo en el CLion para saber si realmente estaba bién resuelto y corregido. Si no estaba bien corregido, lo que haciamos era intentar compararlo con gente de otro grupo para ver en que nos podiamos estar equivocando o confundiendo.
 
 ### Diseño del modelo de datos
+![image](https://github.com/recuu7/LAB-EDA-II/assets/131852106/9a1859a9-2c02-4a6c-a407-71c6f475981d)
+
 
 ### Descripción y procesamiento del conjunto de datos
 
