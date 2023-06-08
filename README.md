@@ -204,9 +204,9 @@ funciones_fichero_file.c
 ### Implementar las funcionalidades de lectura y guardado de datos (Información de los usuarios y sus contactos, y demás que se quiera añadir) desde un archivo externo (.txt o csv) 
 Nosotros hemos usado un fichero para guardar los usuarios para asi tenerlos guardados despues de cada ejecución. Asi que tambien teniamos que poder añadir al fichero los usuarios que quisieramos cuando el programa estaba corriendo.
 #### Variables
-La struct de usuario
+La structura llamada usuario.
 #### Funcionamiento
-El usuario escribia el nombre el gmail y los datos de usuario eso se guardaba en el struct de usuario el cual se mandaba a la función agregar_usuario_lista. En esta funcionse usa el fopen para abrir el fichero usuarios.txt y se usa fprintf para escribir los datos en el fichero.
+El usuario escribe  el nombre, el gmail y los datos de usuario, todo esto se guarda en el struct de usuario el cual se manda a la función agregar_usuario_lista. En esta funcion se usa el fopen para abrir el fichero usuarios.txt y se usa fprintf para escribir los datos en el fichero.
 #### Tiempo empleado
 20 min por errores en la creación del fichero pero como tenia similitud con leer el fichero era solo cambiar unas palabras de codigo de la otra funcion.
 #### Ubicación algoritmo
@@ -214,7 +214,7 @@ funciones_fichero_file.c
 
 ## Objetivos de Exploración:
 ### Funciones de control de usuarios (media de Edad, gustos).
-De manera voluntaria hemos creado una funcion que dados todos los usuarios retornava la edad mediana.
+De manera voluntaria hemos creado una funcion que dados todos los usuarios retornaba la edad mediana.
 También hemos hecho una funcion que imprime por pantalla el top 3 de los gustos más comunes entre los usuarios registrados.
 
 ## Solutions
