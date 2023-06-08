@@ -65,7 +65,7 @@ La principal limitación de nuestro algoritmo de búsqueda es que al ser una bú
 **Tiempo:** Alrededor de 30 min ya que el algoritmo linearSearch lo hemos usado en seminarios y es de los algoritmos mas sencillos de programar. También, como era de las primeras lineas de código tardamos un poco mas ya que aun no habiamos practicado tanto.
 **Ubicación del algoritmo:** La función se encuentra entre las líneas 23 y 31 del archivo *'amistades.c'*
 
-## Implementar como mínimo una Lista (List), una Pila (Stack) y una Cola (Queue) funcionales como parte de alguna de las funcionalidades del proyecto.
+### Implementar como mínimo una Lista (List), una Pila (Stack) y una Cola (Queue) funcionales como parte de alguna de las funcionalidades del proyecto.
 Hemos conseguido implementar satisfactoriamente tanto la Lista como la Pila y la Cola. Cada una hace una funcion diferente en nuestro codigo. 
 La **Lista** la hemos usado para los usuarios ya que era la mas eficaz para ello. Ya que es facil de recorrer y modificar.
 La **Pila** la hemos usado para las solicitudes de amistad, en teoria en la guia esta salia que debia ser una cola pero nosotros hemos pensado que en muchas redes sociales que usamos hoy en dia, la primera solicitud que llega es la que se queda abajo y por lo tanto sale la ultima.
@@ -73,7 +73,9 @@ La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien e
 
 #### Variables
 
-
+#### Porque hemos escogido este algoritmo?
+#### Complejidad del algoritmo
+#### Limitaciones y posibles soluciones
    
 
 
