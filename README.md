@@ -93,17 +93,34 @@ La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien e
    
 ### Implementar funcionalmente uno de los algoritmos de ordenamiento que se verán a lo largo del curso (InsertionSort, BubbleSort, MergeSort o QuickSort).
 
-Hemos decidido implementar el algoritmo de búsqueda BubbleSort
-Este algoritmo recorre un arreglo de elementos y compara pares de elementos adyacentes, intercambiándolos si están en el orden incorrecto. La pasada a través del arreglo se repite varias veces hasta que el arreglo esté completamente ordenado. La función bubbleSort recibe como parámetro un puntero a una estructura de datos llamada Diccionario, que contiene un arreglo de elementos a ordenar. El tamaño del arreglo se almacena en el campo size de la estructura Diccionario. 
-El algoritmo de Bubble Sort se implementa con dos bucles anidados. El bucle externo controla el número de pasadas a través del arreglo, y el bucle interno realiza las comparaciones e intercambios necesarios. En cada iteración del bucle externo, el bucle interno compara el elemento actual con su siguiente. Si el elemento actual es mayor que el siguiente, se intercambian de lugar. 
+El algoritmo de búsqueda implementado es el Bubble Sort, que se utiliza para ordenar un array de elementos en función de su atributo "count" de mayor a menor. A continuación, responderé tus preguntas en relación a la implementación del algoritmo.
+## ¿Qué variables se utilizaron y para qué propósito?
+- La variable "diccionario" es un puntero a una estructura de tipo "Diccionario". Esta estructura contiene los siguientes campos:
+      · "elemento": es un puntero a una estructura de tipo "Elementos". Este              campo almacena los elementos del diccionario.
+      · "size": indica el número actual de elementos en el diccionario.
+      ·"capacity": indica la capacidad máxima del diccionario.
+      
+##¿Qué estructuras de datos se eligieron para este objetivo? ¿Cuál es su uso esperado?
+-Se utilizaron dos estructuras de datos principales:
+      ·"Elementos": es una estructura que contiene dos campos, "count" de tipo          entero para almacenar la cantidad y "gusto" de tipo arreglo de            caracteres para almacenar la descripción del gusto.
+      ·"Diccionario": es una estructura que contiene tres campos, "elemento" que es un puntero a una matriz de elementos, "size" que indica el número actual de elementos en el diccionario y "capacity" que indica la capacidad máxima del diccionario. Esta estructura se utiliza para almacenar y gestionar los elementos del diccionario.
+      
+##¿Qué algoritmo se eligió para este objetivo? ¿Cuál es su comportamiento esperado? ¿Y su rendimiento en Big O?
 
-El proceso continúa hasta que se hayan realizado todas las comparaciones necesarias en todas las pasadas a través del arreglo. Como resultado, los elementos más grandes "burbujean" hacia el final del arreglo, mientras que los elementos más pequeños se desplazan hacia el principio.
+· El algoritmo elegido es el Bubble Sort. Este algoritmo funciona comparando elementos adyacentes y realizando intercambios si están en el orden incorrecto. El proceso se repite hasta que el array esté completamente ordenado.
 
+· El comportamiento esperado del Bubble Sort es ordenar los elementos del diccionario de acuerdo a su atributo "count" de mayor a menor.
+En cuanto a su rendimiento en Big O, el Bubble Sort tiene una complejidad de O(n^2), donde "n" es el número de elementos en el diccionario. Esto significa que su rendimiento empeora significativamente a medida que el tamaño del diccionario aumenta.
+· ¿Qué limitaciones tiene el algoritmo? ¿Y su implementación?
+- El Bubble Sort tiene algunas limitaciones, como su rendimiento ineficiente para grandes conjuntos de datos debido a su complejidad de tiempo cuadrático.
 
+- La implementación actual del algoritmo no considera la posibilidad de elementos duplicados en el diccionario. Si dos elementos tienen el mismo valor "count", el algoritmo no garantiza un orden específico para esos elementos.
 
+· ¿Qué se puede mejorar?
+- Para mejorar el rendimiento, se pueden considerar otros algoritmos de ordenamiento más eficientes, como el Quick Sort o Merge Sort, que tienen una complejidad de tiempo inferior a O(n^2) en promedio.
 
-
-
+- Si se necesita mantener el orden de los elementos con el mismo valor "count", se pueden agregar criterios adicionales para comparar los elementos, como ordenar alfabéticamente por el campo "gusto" en caso de empate.
+En resumen, el algoritmo Bubble Sort implementado utiliza las estructuras de datos "Elementos" y "Diccionario" para almacenar y ordenar los elementos según su atributo "count". Sin embargo, debido a su rendimiento ineficiente en grandes conjuntos de datos, se podrían considerar mejoras utilizando algoritmos de ordenamiento más eficientes.
 
 #### Variables
 
@@ -169,6 +186,7 @@ Proporcionar opciones para especificar el nombre del archivo y el formato de ent
 ### Arquitectura del sistema
 
 ### Gestión de errores
+Durante lo largo del proyectp, a medida que hemos ido desarrollando el proyecto, nos han aparecido muchos errores en todos lados y que nos ha costado mucho tiempo el saber corregirlos para que por fin compilase y para que estos desaparecieran. Básicamente cuando un miembro del grupo tenia dudas sobre como resolver cualquier error, lo que hemos ido haciendo, primero de todo ponerlo en común con todos los miembros del grupo para saber si lo podiamos resolver entre nosotros sin la necesidad de preguntar a alguien externo a nuestro grupo. Si nadie lo sabia resolver, lo que haciamos es buscar información a través de internet en varias páginas como por ejemplo usando la inteligencia artificial de CHAT GPT, ya que nos ayudaba mucho para sobretodo tener saber el como y el porque lo solucionava de dicha manera. Sin embargo, tamboén hemos recurrido a vídeos ya sea en youtube o en otras plataformas. en el caso del chat gpt, cuando nos resolvia el error que le proporcionabamos para que nos lo corrijiera, lo primero que hacíamos era comprovarlo en el CLion para saber si realmente estaba bién resuelto y corregido. Si no estaba bien corregido, lo que haciamos era intentar compararlo con gente de otro grupo para ver en que nos podiamos estar equivocando o confundiendo.
 
 ### Diseño del modelo de datos
 
