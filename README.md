@@ -85,6 +85,10 @@ La **Pila** la hemos usado para las solicitudes de amistad, en teoria en la guia
 
 
 La **Cola** ha sido usada para la lista de amigos de un usuario ya que tambien es facil de recorrer.
+### Variables
+-Las variables para la lista hemos usado una struct la cual tiene el size y 2 variables las cuales son structs que pertenecen a una LINKED ARRAY, llamados primero y ultimo.
+-Las variables para la Pila es otra struct en el cual hay el top que es una linked array para saber que esta en la cima de la pila, y tambien solicitudes.
+-Las variables para la Cola hemos hecho una struct similar a la lista pero no habia un usuario previo.
 
 ### Implementar funcionalmente uno de los algoritmos de ordenamiento que se verán a lo largo del curso (InsertionSort, BubbleSort, MergeSort o QuickSort).
 El algoritmo de búsqueda que hemos decidido implementar es el Bubble Sort, que hemos utilizado en nuestro caso para ordenar los gustos de los usuarios (de más a menos común) dentro de un diccionario. A continuación, explicaremos algunos aspectos en relación a la implementación del algoritmo.
