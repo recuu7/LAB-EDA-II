@@ -146,7 +146,7 @@ La función leer_gustos implementa la lectura de datos desde un archivo de texto
 - buffer: Un arreglo de caracteres utilizado como un buffer temporal para almacenar cada línea leída del archivo.
 - gusto: Una variable de tipo cadena (arreglo de caracteres) utilizada para almacenar el valor de gusto leído de cada línea del archivo.
 - count: Una variable de tipo entero utilizada para almacenar el valor de count leído de cada línea del archivo.
-elemento: Una variable de tipo Elementos que representa un elemento del diccionario, con campos count y gusto para almacenar los valores correspondientes.
+- elemento: Una variable de tipo Elementos que representa un elemento del diccionario, con campos count y gusto para almacenar los valores correspondientes.
 - diccionario: Una estructura de datos de tipo Diccionario que contiene un arreglo dinámico de elementos y mantiene el tamaño y la capacidad actual del diccionario.
 
 #### Estructuras de datos utilizadas:
