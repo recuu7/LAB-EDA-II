@@ -20,7 +20,7 @@ void iniciar_usuario(User* usuario) { // funcion para iniciar un usuario
     usuario->gustos5[0] = '0';
     iniciar_pila(&usuario->solicitudes);
     iniciar_cola_amistades(&usuario->amistades);
-    // le damos 0 a los numeros, '0' a las strings i iniciamos la pila de solicitudes y la cola de amistades del usuario en concreto
+    // le damos 0 a los numeros, '0' a las strings e iniciamos la pila de solicitudes y la cola de amistades del usuario en concreto
 }
 
 void pedir_datos(User* usuario){ // funcion para pedir los datos de un usuario en concreto
